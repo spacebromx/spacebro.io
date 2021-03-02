@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Header() {
   return (
-    <div className="sticky flex space-between justify-between pt-16">
+    <div className="sticky flex space-between justify-between pt-16 ">
       <Link href="/">
         <a>
           <Image
