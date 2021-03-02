@@ -9,11 +9,13 @@ interface IProps {
 const PostFooter = ({ url = '', readingText, onClick }: IProps) => {
   return (
     <>
-      <Link href={url}>
-        <a className="text-green-500 font-semibold inline-flex flex-1 text-xl hover:text-orange-900 transition-colors">
-          Read more &rarr;
-        </a>
-      </Link>
+      <div className="flex-1">
+        <Link href={url}>
+          <a className="text-green-500 font-semibold inline-flex text-base lg:text-xl hover:text-orange-900 transition-colors">
+            Read more &rarr;
+          </a>
+        </Link>
+      </div>
       <div className="inline-flex items-center">
         <svg
           className="mr-2"

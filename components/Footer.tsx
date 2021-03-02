@@ -2,9 +2,9 @@ import Link from 'next/link'
 const Footer = () => {
   return (
     <>
-      <div className="bg-gradient-to-r from-teal-900 to-pink-900 h-0.5 mb-20" />
-      <div className="footer grid grid-cols-12 mb-20">
-        <div className="col-span-3">
+      <div className="bg-gradient-to-r from-teal-900 to-pink-900 h-0.5 mb-14 lg:mb-20" />
+      <div className="footer grid grid-cols-4 gap-y-8 lg:gap-y-0 px-4 lg:px-0 lg:grid-cols-12 mb-20">
+        <div className="col-span-3 lg:col-span-3">
           <svg
             className="mb-3"
             width="213"
@@ -20,9 +20,9 @@ const Footer = () => {
           </svg>
           <p>&copy; {new Date().getFullYear()} Some rights reserved.</p>
         </div>
-        <div className="col-start-7 col-end-9">
+        <div className="col-span-6 lg:col-start-8 lg:col-end-10">
           <h3 className="font-bold text-2xl mb-4 text-orange-500 glow-orange">
-            Site
+            Site Links
           </h3>
           <ul className="space-y-2">
             <li>
@@ -47,7 +47,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="col-start-9 col-end-11">
+        <div className="col-span-6 lg:col-start-10 lg:col-end-12">
           <h3 className="font-bold text-2xl mb-4 text-orange-500 glow-orange">
             Social Media
           </h3>
@@ -74,7 +74,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="col-start-11 col-end-13">
+        <div className="col-span-6 lg:col-start-12 lg:col-end-13">
           <h3 className="font-bold text-2xl mb-4 text-orange-500 glow-orange">
             Legal
           </h3>

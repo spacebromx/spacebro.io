@@ -8,7 +8,7 @@ export default function Home() {
     <div>
       <Hero />
       <LatestPosts />
-      <div className="mb-24">
+      <div className="mb-14 lg:mb-40">
         <SubscriptionForm />
       </div>
       <Footer />
