@@ -9,7 +9,7 @@ const SubscriptionForm = () => {
         </p>
         <p className="w-5/6 lg:w-1/2 mx-auto text-xl leading-8 mb-12">
           Join my newsletter and get cool articles about Web Development, Design
-          and more cool stuff.
+          and more cool tech-related stuff.
         </p>
         <input
           type="email"

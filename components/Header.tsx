@@ -63,6 +63,11 @@ export default function Header() {
           </li>
           <li className="menu__item">
             <a href="#" className="text-base lg:text-xl">
+              Projects
+            </a>
+          </li>
+          <li className="menu__item">
+            <a href="#" className="text-base lg:text-xl">
               Resources
             </a>
           </li>

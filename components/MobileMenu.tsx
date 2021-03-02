@@ -44,6 +44,11 @@ const MobileMenu = ({ onClose }: IProps) => {
         </li>
         <li className="menu__item">
           <a href="#" className="text-4xl">
+            Projects
+          </a>
+        </li>
+        <li className="menu__item">
+          <a href="#" className="text-4xl">
             Resources
           </a>
         </li>
