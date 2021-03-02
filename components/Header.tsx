@@ -6,7 +6,8 @@ export default function Header() {
     <div
       className="nav bg-purple-800 flex space-between justify-between pt-4 sticky top-0 z-10"
       style={{
-        backdropFilter: 'blur(40px) opacity(30%)',
+        backdropFilter: 'blur(20px)',
+        opacity: 0.9,
       }}
     >
       <Link href="/">

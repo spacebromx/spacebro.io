@@ -21,7 +21,9 @@ const Footer = () => {
           <p>&copy; {new Date().getFullYear()} Some rights reserved.</p>
         </div>
         <div className="col-start-7 col-end-9">
-          <h3 className="font-bold text-2xl mb-4 text-orange-500">Site</h3>
+          <h3 className="font-bold text-2xl mb-4 text-orange-500 glow-orange">
+            Site
+          </h3>
           <ul className="space-y-2">
             <li>
               <Link href="/">
@@ -46,7 +48,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="col-start-9 col-end-11">
-          <h3 className="font-bold text-2xl mb-4 text-orange-500">
+          <h3 className="font-bold text-2xl mb-4 text-orange-500 glow-orange">
             Social Media
           </h3>
           <ul className="space-y-2">
@@ -73,7 +75,9 @@ const Footer = () => {
           </ul>
         </div>
         <div className="col-start-11 col-end-13">
-          <h3 className="font-bold text-2xl mb-4 text-orange-500">Legal</h3>
+          <h3 className="font-bold text-2xl mb-4 text-orange-500 glow-orange">
+            Legal
+          </h3>
           <ul className="space-y-2">
             <li>
               <Link href="/">
