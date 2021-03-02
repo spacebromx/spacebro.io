@@ -11,17 +11,22 @@ interface IProps {
 
 const Post = ({ isFeatured = false, url, title, excerpt }: IProps) => {
   return (
-    <div className="post grid grid-cols-1 lg:grid-cols-12 gap-y-4 lg:gap-y-0">
+    <div className="post grid grid-cols-1 lg:grid-cols-12 gap-y-4 lg:gap-y-0 relative">
       {isFeatured && (
-        <div className="col-span-1 lg:col-start-1 lg:col-end-5">
-          <Image
-            src="/images/post-featured.jpg"
-            alt="post"
-            width="485"
-            height="416"
-            className="rounded-2xl"
-          />
-        </div>
+        <>
+          <div className="absolute -left-1 lg:-left-4 top-8 bg-teal-600 z-10 px-3 py-1 shadow-md">
+            <span className="font-semibold">coding</span>
+          </div>
+          <div className="col-span-1 lg:col-start-1 lg:col-end-5">
+            <Image
+              src="/images/post-featured.jpg"
+              alt="post"
+              width="485"
+              height="416"
+              className="rounded-2xl"
+            />
+          </div>
+        </>
       )}
       <div
         className={
@@ -42,7 +47,7 @@ const Post = ({ isFeatured = false, url, title, excerpt }: IProps) => {
           </Link>
         </h2>
         <div
-          className={`text-gray-500 leading-7 lg:leading-8 ${
+          className={`text-gray-600 leading-7 lg:leading-8 ${
             isFeatured ? 'text-lg lg:text-xl' : 'text-lg'
           }`}
         >
