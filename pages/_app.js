@@ -3,9 +3,12 @@ import '../styles/globals.scss'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      <div className="bg-gradient-to-r from-teal-900 to-pink-900 h-0.5" />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   )
 }
 

@@ -3,7 +3,7 @@ const Footer = () => {
   return (
     <>
       <div className="bg-gradient-to-r from-teal-900 to-pink-900 h-0.5 mb-20" />
-      <div className="footer grid grid-cols-12">
+      <div className="footer grid grid-cols-12 mb-20">
         <div className="col-span-3">
           <svg
             className="mb-3"

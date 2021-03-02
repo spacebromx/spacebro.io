@@ -22,6 +22,20 @@ a {
   box-sizing: border-box;
 }
 
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #07EDF8;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #FC2EB1;
+  border-radius: 20px;
+}
+
+
 @font-face {
   font-family: 'SF Pro Display';
   src: url('/fonts/SF-Pro-Display-Heavy.otf');

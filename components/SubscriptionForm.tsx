@@ -3,7 +3,7 @@ const SubscriptionForm = () => {
     <div className="text-center">
       <form>
         <p className="text-5xl font-bold leading-snug mb-8 bg-clip-text text-transparent bg-gradient-to-bl from-teal-900 to-yellow-300">
-          Amazing content
+          Amazing content,
           <br />
           on your mailbox
         </p>

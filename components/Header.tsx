@@ -3,12 +3,17 @@ import Link from 'next/link'
 
 export default function Header() {
   return (
-    <div className="sticky flex space-between justify-between pt-16 ">
+    <div
+      className="nav bg-purple-800 flex space-between justify-between pt-4 sticky top-0 z-10"
+      style={{
+        backdropFilter: 'blur(40px) opacity(30%)',
+      }}
+    >
       <Link href="/">
         <a>
           <Image
             src="/images/logo.svg"
-            width="279"
+            width="219"
             height="59"
             alt="spacebro by Alan Medina"
           />
