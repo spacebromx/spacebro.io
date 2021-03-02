@@ -1,5 +1,7 @@
-import Head from 'next/head'
+import Hero from '@/components/Hero'
 
 export default function Home() {
-  return <div className="container mx-auto">Hello world</div>
+  return <div>
+    <Hero />
+  </div>
 }

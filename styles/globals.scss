@@ -2,8 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "_utils.scss";
+
 html,
 body {
+  background-color: #302441;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -21,7 +24,7 @@ a {
 
 @font-face {
   font-family: 'SF Pro Display';
-  src: url('/fonts/SF-Pro-Display-Heavy');
+  src: url('/fonts/SF-Pro-Display-Heavy.otf');
   font-display: optional;
   font-weight: 700;
 }

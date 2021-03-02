@@ -32,6 +32,8 @@ module.exports = {
         900: '#64DBA5',
         500: '#72F1B8',
       },
+      white: '#fff',
+      transparent: 'transparent',
     },
     screens: {
       sm: '640px',
