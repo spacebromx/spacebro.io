@@ -20,7 +20,7 @@ const SubscriptionForm = () => {
         <input
           type="submit"
           value="Sign up"
-          className="bg-gradient-to-bl from-pink-900 to-pink-300 md:w-1/6 font-bold px-4 py-2 rounded-tr-md rounded-br-md cursor-pointer focus:outline-none focus:ring focus:border-pink-300"
+          className="bg-gradient-to-bl from-pink-900 to-pink-300 md:w-1/6 lg:w-1/12 font-bold px-4 py-2 rounded-tr-md rounded-br-md cursor-pointer focus:outline-none focus:ring focus:border-pink-300"
         />
       </form>
     </div>

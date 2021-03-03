@@ -2,7 +2,6 @@ import Hero from '@/components/Hero'
 import LatestPosts from '@/components/LatestPosts'
 import SubscriptionForm from '@/components/SubscriptionForm'
 import LatestProjects from '@/components/LatestProjects'
-import Footer from '@/components/Footer'
 
 export default function Home() {
   return (

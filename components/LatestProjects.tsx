@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import ProjectPreview from '@/components/ProjectPreview'
 
 const LatestProjects = () => {
@@ -20,9 +21,13 @@ const LatestProjects = () => {
           image="/images/project-preview.jpg"
         />
         <div className="text-center">
-          <button className="font-normal text-lg bg-gradient-to-r hover:bg-gradient-to-l from-teal-900 to-pink-900 px-6 py-2 rounded-lg">
-            See more projects 🔥
-          </button>
+          <Link href="/">
+            <a>
+              <button className="font-normal text-lg bg-gradient-to-r hover:bg-gradient-to-l from-teal-900 to-pink-900 px-6 py-2 rounded-lg">
+                See more projects 🔥
+              </button>
+            </a>
+          </Link>
         </div>
       </div>
     </div>
