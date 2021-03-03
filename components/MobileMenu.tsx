@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 interface IProps {
   onClose: (boolean) => void
 }
@@ -38,24 +40,32 @@ const MobileMenu = ({ onClose }: IProps) => {
       </button>
       <ul className="lg:hidden space-y-8 items-center justify-center lg:justify-items-start">
         <li className="menu__item">
-          <a href="#" className="text-4xl">
-            Articles
-          </a>
+          <Link href="/articles">
+            <a className="text-4xl" onClick={onClose}>
+              Articles
+            </a>
+          </Link>
         </li>
         <li className="menu__item">
-          <a href="#" className="text-4xl">
-            Projects
-          </a>
+          <Link href="/work">
+            <a className="text-4xl" onClick={onClose}>
+              Work
+            </a>
+          </Link>
         </li>
         <li className="menu__item">
-          <a href="#" className="text-4xl">
-            Resources
-          </a>
+          <Link href="/pages/resources">
+            <a className="text-4xl" onClick={onClose}>
+              Resources
+            </a>
+          </Link>
         </li>
         <li className="menu__item">
-          <a href="#" className="text-4xl">
-            About
-          </a>
+          <Link href="/pages/about">
+            <a className="text-4xl" onClick={onClose}>
+              About
+            </a>
+          </Link>
         </li>
       </ul>
     </div>
