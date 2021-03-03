@@ -10,7 +10,7 @@ const Hero = () => {
           </span>
         </p>
       </div>
-      <p className="text-xl lg:text-2xl font-normal w-5/6 lg:w-4/6 mx-auto mb-16 lg:mb-24">
+      <p className="text-xl md:text-xl lg:text-2xl font-normal w-5/6 md:w-4/6 lg:w-4/6 mx-auto mb-16 lg:mb-24">
         Welcome to my personal place on the Internet. I write code to pay the
         bills, but also enjoy writing and sharing cool stuff.
       </p>

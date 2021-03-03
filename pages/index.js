@@ -1,6 +1,7 @@
 import Hero from '@/components/Hero'
 import LatestPosts from '@/components/LatestPosts'
 import SubscriptionForm from '@/components/SubscriptionForm'
+import LatestProjects from '@/components/LatestProjects'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -8,10 +9,10 @@ export default function Home() {
     <div>
       <Hero />
       <LatestPosts />
-      <div className="mb-14 lg:mb-40">
+      <LatestProjects />
+      <div className="mb-14 md:mb-24 lg:mb-40">
         <SubscriptionForm />
       </div>
-      <Footer />
     </div>
   )
 }

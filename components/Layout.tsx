@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -8,6 +9,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <h1 className="hidden">Alan Medina - spacebro | Software Engineer</h1>
         <Header />
         {children}
+        <Footer />
       </>
     </div>
   )

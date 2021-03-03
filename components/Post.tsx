@@ -11,13 +11,13 @@ interface IProps {
 
 const Post = ({ isFeatured = false, url, title, excerpt }: IProps) => {
   return (
-    <div className="post grid grid-cols-1 lg:grid-cols-12 gap-y-4 lg:gap-y-0 relative">
+    <div className="post grid grid-cols-1 md:grid-cols-12 lg:grid-cols-12 gap-y-4 md:gap-y-0 lg:gap-y-0 relative">
       {isFeatured && (
         <>
-          <div className="absolute -left-1 lg:-left-4 top-8 bg-teal-600 z-10 px-3 py-1 shadow-md">
+          <div className="absolute -left-1 md:-left-4 lg:-left-4 top-8 bg-teal-600 z-10 px-3 py-1 shadow-md">
             <span className="font-semibold">coding</span>
           </div>
-          <div className="col-span-1 lg:col-start-1 lg:col-end-5">
+          <div className="col-span-1 md:col-start-1 md:col-end-5 lg:col-start-1 lg:col-end-5">
             <Image
               src="/images/post-featured.jpg"
               alt="post"
@@ -31,7 +31,7 @@ const Post = ({ isFeatured = false, url, title, excerpt }: IProps) => {
       <div
         className={
           isFeatured
-            ? 'col-span-1 lg:col-start-6 lg:col-end-13 relative'
+            ? 'col-span-1 md:col-start-6 md:col-end-13 lg:col-start-6 lg:col-end-13 relative'
             : 'col-span-12 relative'
         }
       >
@@ -39,7 +39,7 @@ const Post = ({ isFeatured = false, url, title, excerpt }: IProps) => {
           className={
             isFeatured
               ? 'post--featured__title'
-              : 'text-2xl font-bold leading-9 mb-4 lg:mb-8'
+              : 'text-2xl font-bold leading-9 mb-4 md:mb-6 lg:mb-8'
           }
         >
           <Link href="/">
@@ -48,7 +48,7 @@ const Post = ({ isFeatured = false, url, title, excerpt }: IProps) => {
         </h2>
         <div
           className={`text-gray-600 leading-7 lg:leading-8 ${
-            isFeatured ? 'text-lg lg:text-xl' : 'text-lg'
+            isFeatured ? 'text-lg md:text-lg lg:text-xl' : 'text-lg md:text-xl'
           }`}
         >
           <div className={isFeatured ? 'mb-12' : 'mb-12 lg:mb-20'}>

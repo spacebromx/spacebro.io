@@ -10,14 +10,14 @@ export default function Header() {
     <>
       {showMenu && <MobileMenu onClose={() => setShowMenu(false)} />}
       <div
-        className="nav bg-purple-800 lg:mx-0 flex flex-col lg:flex-row space-between justify-between pt-4 sticky top-0 z-20 text-left"
+        className="nav bg-purple-800 lg:mx-0 flex flex-col md:flex-row lg:flex-row space-between justify-between pt-4 sticky top-0 z-20 text-left"
         style={{
           backdropFilter: 'blur(20px)',
           opacity: 0.9,
         }}
       >
         <Link href="/">
-          <a className="ml-4 lg:ml-0">
+          <a className="ml-4 md:ml-8 lg:ml-0">
             <Image
               src="/images/logo.svg"
               width="219"
@@ -26,7 +26,7 @@ export default function Header() {
             />
           </a>
         </Link>
-        <div className="burger-menu lg:hidden absolute right-0 mr-4 mt-1.5">
+        <div className="burger-menu md:hidden lg:hidden absolute right-0 mr-4 mt-1.5">
           <button onClick={() => setShowMenu(true)}>
             <svg
               width="40"
@@ -55,7 +55,7 @@ export default function Header() {
             </svg>
           </button>
         </div>
-        <ul className="hidden lg:inline-flex space-x-8 items-center justify-center lg:justify-items-start">
+        <ul className="hidden md:inline-flex lg:inline-flex space-x-12 items-center justify-center md:justify-items-start lg:justify-items-start">
           <li className="menu__item">
             <a href="#" className="text-base lg:text-xl">
               Articles
@@ -63,7 +63,7 @@ export default function Header() {
           </li>
           <li className="menu__item">
             <a href="#" className="text-base lg:text-xl">
-              Projects
+              Work
             </a>
           </li>
           <li className="menu__item">
