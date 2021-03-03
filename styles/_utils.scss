@@ -2,6 +2,10 @@
   @apply bg-clip-text hover:text-transparent bg-gradient-to-r from-orange-900 to-yellow-900 font-bold text-white transition-all
 }
 
+.menu__item--active {
+  @apply text-transparent bg-gradient-to-r from-orange-900 to-yellow-900
+}
+
 .post--featured__title {
   @apply text-3xl lg:text-4xl font-bold leading-10 lg:leading-snug mb-4 lg:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-yellow-900 to-orange-900
 }

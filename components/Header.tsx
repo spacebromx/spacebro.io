@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import MobileMenu from '@/components/MobileMenu'
 
 export default function Header() {
   const [showMenu, setShowMenu] = useState(false)
+  const router = useRouter()
 
   return (
     <>
@@ -56,22 +58,46 @@ export default function Header() {
           </button>
         </div>
         <ul className="hidden md:inline-flex lg:inline-flex space-x-12 items-center justify-center md:justify-items-start lg:justify-items-start">
-          <li className="menu__item">
+          <li
+            className={`${
+              router.pathname === '/articles'
+                ? 'menu__item menu__item--active'
+                : 'menu__item'
+            }`}
+          >
             <Link href="/articles">
               <a className="text-base lg:text-xl">Articles</a>
             </Link>
           </li>
-          <li className="menu__item">
+          <li
+            className={`${
+              router.pathname === '/work'
+                ? 'menu__item menu__item--active'
+                : 'menu__item'
+            }`}
+          >
             <Link href="/work">
               <a className="text-base lg:text-xl">Work</a>
             </Link>
           </li>
-          <li className="menu__item">
+          <li
+            className={`${
+              router.pathname === '/pages/resources'
+                ? 'menu__item menu__item--active'
+                : 'menu__item'
+            }`}
+          >
             <Link href="/pages/resources">
               <a className="text-base lg:text-xl">Resources</a>
             </Link>
           </li>
-          <li className="menu__item">
+          <li
+            className={`${
+              router.pathname === '/pages/about'
+                ? 'menu__item menu__item--active'
+                : 'menu__item'
+            }`}
+          >
             <Link href="/pages/about">
               <a className="text-base lg:text-xl">About</a>
             </Link>
