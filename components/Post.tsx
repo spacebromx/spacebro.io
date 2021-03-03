@@ -15,7 +15,7 @@ const Post = ({ isFeatured = false, url, title, excerpt }: IProps) => {
       {isFeatured && (
         <>
           <div className="absolute -left-1 md:-left-4 lg:-left-4 top-8 bg-teal-600 z-10 px-3 py-1 shadow-md">
-            <span className="font-semibold">coding</span>
+            <span className="font-semibold">featured</span>
           </div>
           <div className="col-span-1 md:col-start-1 md:col-end-5 lg:col-start-1 lg:col-end-5">
             <Image
@@ -42,7 +42,7 @@ const Post = ({ isFeatured = false, url, title, excerpt }: IProps) => {
               : 'text-2xl font-bold leading-9 mb-4 md:mb-6 lg:mb-8'
           }
         >
-          <Link href="/">
+          <Link href={url}>
             <a>{title}</a>
           </Link>
         </h2>
