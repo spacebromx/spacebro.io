@@ -130,7 +130,7 @@ const Footer = () => {
           <ul className="space-y-2">
             <li>
               <Link href="/">
-                <a className="text-orange-300">freeCodeCamp</a>
+                <a className="text-orange-300 break-words">freeCodeCamp</a>
               </Link>
             </li>
             <li>

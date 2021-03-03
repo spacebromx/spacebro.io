@@ -57,24 +57,24 @@ export default function Header() {
         </div>
         <ul className="hidden md:inline-flex lg:inline-flex space-x-12 items-center justify-center md:justify-items-start lg:justify-items-start">
           <li className="menu__item">
-            <a href="#" className="text-base lg:text-xl">
-              Articles
-            </a>
+            <Link href="/articles">
+              <a className="text-base lg:text-xl">Articles</a>
+            </Link>
           </li>
           <li className="menu__item">
-            <a href="#" className="text-base lg:text-xl">
-              Work
-            </a>
+            <Link href="/work">
+              <a className="text-base lg:text-xl">Work</a>
+            </Link>
           </li>
           <li className="menu__item">
-            <a href="#" className="text-base lg:text-xl">
-              Resources
-            </a>
+            <Link href="/resources">
+              <a className="text-base lg:text-xl">Resources</a>
+            </Link>
           </li>
           <li className="menu__item">
-            <a href="#" className="text-base lg:text-xl">
-              About
-            </a>
+            <Link href="/about">
+              <a className="text-base lg:text-xl">About</a>
+            </Link>
           </li>
         </ul>
         <div className="lg:hidden bg-gradient-to-r from-teal-900 to-pink-900 h-0.5" />
