@@ -41,29 +41,29 @@ const Footer = () => {
           </h3>
           <ul className="space-y-2">
             <li>
-              <Link href="/">
-                <a className="text-orange-300">About</a>
+              <Link href="/articles">
+                <a className="text-orange-300">Articles</a>
               </Link>
             </li>
             <li>
-              <Link href="/">
+              <Link href="/work">
                 <a className="text-orange-300">Work</a>
               </Link>
             </li>
             <li>
-              <Link href="/">
+              <Link href="/pages/resources">
                 <a className="text-orange-300 text-green-500 font-bold">
                   Resources
                 </a>
               </Link>
             </li>
             <li>
-              <Link href="/">
-                <a className="text-orange-300">Articles</a>
+              <Link href="/pages/about">
+                <a className="text-orange-300">About</a>
               </Link>
             </li>
             <li>
-              <Link href="/">
+              <Link href="/pages/uses">
                 <a className="text-orange-300">Uses</a>
               </Link>
             </li>
@@ -75,29 +75,29 @@ const Footer = () => {
           </h3>
           <ul className="space-y-2">
             <li>
-              <Link href="/">
-                <a className="text-orange-300">YouTube</a>
-              </Link>
+              <a href="#/" className="text-orange-300">
+                YouTube
+              </a>
             </li>
             <li>
-              <Link href="/">
-                <a className="text-orange-300">Instagram</a>
-              </Link>
+              <a href="#/" className="text-orange-300">
+                Instagram
+              </a>
             </li>
             <li>
-              <Link href="/">
-                <a className="text-orange-300">LinkedIn</a>
-              </Link>
+              <a href="#/" className="text-orange-300">
+                LinkedIn
+              </a>
             </li>
             <li>
-              <Link href="/">
-                <a className="text-orange-300">Github</a>
-              </Link>
+              <a href="#/" className="text-orange-300">
+                Github
+              </a>
             </li>
             <li>
-              <Link href="/">
-                <a className="text-orange-300">Facebook</a>
-              </Link>
+              <a href="#/" className="text-orange-300">
+                Facebook
+              </a>
             </li>
           </ul>
         </div>
@@ -107,17 +107,17 @@ const Footer = () => {
           </h3>
           <ul className="space-y-2">
             <li>
-              <Link href="/">
+              <Link href="/pages/privacy-policy">
                 <a className="text-orange-300">Privacy Policy</a>
               </Link>
             </li>
             <li>
-              <Link href="/">
+              <Link href="/pages/terms-of-use">
                 <a className="text-orange-300">Terms of Use</a>
               </Link>
             </li>
             <li>
-              <Link href="/">
+              <Link href="/pages/cookies">
                 <a className="text-orange-300">Cookies</a>
               </Link>
             </li>
@@ -129,14 +129,22 @@ const Footer = () => {
           </h3>
           <ul className="space-y-2">
             <li>
-              <Link href="/">
-                <a className="text-orange-300 break-words">freeCodeCamp</a>
-              </Link>
+              <a
+                href="https://www.freecodecamp.org/"
+                rel="nofollow"
+                className="text-orange-300 break-words"
+              >
+                freeCodeCamp
+              </a>
             </li>
             <li>
-              <Link href="/">
-                <a className="text-orange-300">MDN</a>
-              </Link>
+              <a
+                href="https://developer.mozilla.org/en-US/"
+                rel="nofollow"
+                className="text-orange-300"
+              >
+                MDN
+              </a>
             </li>
           </ul>
         </div>

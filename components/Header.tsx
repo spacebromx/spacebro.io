@@ -67,12 +67,12 @@ export default function Header() {
             </Link>
           </li>
           <li className="menu__item">
-            <Link href="/resources">
+            <Link href="/pages/resources">
               <a className="text-base lg:text-xl">Resources</a>
             </Link>
           </li>
           <li className="menu__item">
-            <Link href="/about">
+            <Link href="/pages/about">
               <a className="text-base lg:text-xl">About</a>
             </Link>
           </li>
