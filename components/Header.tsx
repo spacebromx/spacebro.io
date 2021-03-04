@@ -60,7 +60,8 @@ export default function Header() {
         <ul className="hidden md:inline-flex lg:inline-flex space-x-12 items-center justify-center md:justify-items-start lg:justify-items-start">
           <li
             className={`${
-              router.pathname === '/articles'
+              router.pathname === '/articles' ||
+              router.pathname === '/articles/[slug]'
                 ? 'menu__item menu__item--active'
                 : 'menu__item'
             }`}
