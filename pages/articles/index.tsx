@@ -15,11 +15,6 @@ export default function Articles({ posts }) {
         </h2>
         <div className="space-y-16">
           {posts.map(({ title, content, slug, excerpt }, index) => {
-            const trimmedExcerpt = `${excerpt.substr(
-              0,
-              MAX_NORMAL_EXCERPT_CHARS
-            )} […]`
-
             return (
               <Post
                 key={index}

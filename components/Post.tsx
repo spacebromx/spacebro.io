@@ -8,6 +8,7 @@ interface IProps {
   title: string
   excerpt: string
   readingTime: string
+  featuredImage: string
 }
 
 const Post = ({
@@ -16,6 +17,7 @@ const Post = ({
   title,
   excerpt,
   readingTime,
+  featuredImage,
 }: IProps) => {
   return (
     <div className="post grid grid-cols-1 md:grid-cols-12 lg:grid-cols-12 gap-y-4 md:gap-y-0 lg:gap-y-0 relative">
@@ -26,7 +28,7 @@ const Post = ({
           </div>
           <div className="col-span-1 md:col-start-1 md:col-end-5 lg:col-start-1 lg:col-end-5">
             <Image
-              src="/images/post-featured.jpg"
+              src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${featuredImage}`}
               alt="post"
               width="485"
               height="416"
