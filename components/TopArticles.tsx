@@ -1,4 +1,3 @@
-import React from 'react'
 import Link from 'next/link'
 
 const mockData = new Array(5).fill({

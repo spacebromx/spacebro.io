@@ -4,19 +4,7 @@ import { GetStaticProps } from 'next'
 import { MAX_NORMAL_EXCERPT_CHARS } from '@/constants.ts'
 import { truncateText } from 'utils'
 import Fetcher from '@/lib/fetcher'
-
-const mockData = new Array(20).fill({
-  title:
-    'This is an example of a post title that will be populated from the database',
-  url: '/',
-  content:
-    'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n' +
-    'tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n' +
-    'quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n' +
-    'consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n' +
-    'cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n' +
-    'proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-})
+import readingTime from 'reading-time'
 
 export default function Articles({ posts }) {
   return (
@@ -38,6 +26,7 @@ export default function Articles({ posts }) {
                 url={`/articles/${slug}`}
                 title={title}
                 excerpt={truncateText(excerpt, MAX_NORMAL_EXCERPT_CHARS)}
+                readingTime={readingTime(content).text}
               />
             )
           })}

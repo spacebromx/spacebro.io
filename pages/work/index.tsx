@@ -1,6 +1,4 @@
-import React from 'react'
 import ProjectPreview from '@/components/ProjectPreview'
-import Link from 'next/link'
 import { GetStaticProps } from 'next'
 import Fetcher from '@/lib/fetcher'
 import { truncateText } from '@/utils'

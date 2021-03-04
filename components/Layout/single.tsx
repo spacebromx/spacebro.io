@@ -5,7 +5,21 @@ import hydrate from 'next-mdx-remote/hydrate'
 import { MdxRemote } from 'next-mdx-remote/types'
 import { formatDate } from '@/utils'
 
-const Single = ({ title, date, featuredImage, content, children = null }) => {
+interface IProps {
+  title: string
+  date: string
+  featuredImage: string
+  content: unknown | string
+  children?: React.ReactNode
+}
+
+const Single = ({
+  title,
+  date,
+  featuredImage,
+  content,
+  children = null,
+}: IProps) => {
   return (
     <>
       <article className="post--single px-4 md:px-8 lg:px-0 py-10 md:py-16">
