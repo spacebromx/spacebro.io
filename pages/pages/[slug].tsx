@@ -8,18 +8,11 @@ interface IProps {
   page: IPage
 }
 
-const SingleWork = ({
-  page: { title, date_updated, featured_image, content },
-}: IProps) => {
+const SingleWork = ({ page }: IProps) => {
   return (
-    <div>
-      <Single
-        title={title}
-        date={date_updated}
-        featuredImage={featured_image}
-        content={content}
-      />
-    </div>
+    <>
+      <Single {...page} urlPrefix="pages" />
+    </>
   )
 }
 

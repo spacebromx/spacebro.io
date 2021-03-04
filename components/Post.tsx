@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import PostFooter from '@/components/PostFooter'
+import { SITE_URL } from '@/constants'
 
 interface IProps {
   isFeatured?: boolean
@@ -28,7 +29,11 @@ const Post = ({
           </div>
           <div className="col-span-1 md:col-start-1 md:col-end-5 lg:col-start-1 lg:col-end-5">
             <Image
-              src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${featuredImage}`}
+              src={
+                featuredImage
+                  ? `${process.env.NEXT_PUBLIC_API_URL}/assets/${featuredImage}`
+                  : `${SITE_URL}/images/featured-placeholder.jpg`
+              }
               alt="post"
               width="485"
               height="416"

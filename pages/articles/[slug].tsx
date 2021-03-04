@@ -9,16 +9,9 @@ interface IProps {
   post: IPost
 }
 
-export default function Post({
-  post: { title, date_updated, featured_image, content },
-}: IProps) {
+export default function Post({ post }: IProps) {
   return (
-    <Single
-      title={title}
-      date={date_updated}
-      featuredImage={featured_image}
-      content={content}
-    >
+    <Single {...post} urlPrefix="articles">
       <AuthorBox />
     </Single>
   )

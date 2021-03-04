@@ -9,20 +9,11 @@ interface IProps {
   project: IProject
 }
 
-const SingleWork = ({
-  project: { title, date_updated, featured_image, content },
-}: IProps) => {
+const SingleWork = ({ project }: IProps) => {
   return (
-    <div>
-      <Single
-        title={title}
-        date={date_updated}
-        featuredImage={featured_image}
-        content={content}
-      >
-        <AuthorBox />
-      </Single>
-    </div>
+    <Single {...project} urlPrefix="work">
+      <AuthorBox />
+    </Single>
   )
 }
 

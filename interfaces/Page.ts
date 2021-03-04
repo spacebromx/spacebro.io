@@ -6,4 +6,7 @@ export interface IPage {
   slug: string
   status: string
   title: string
+  excerpt: string
+  seo_description?: string
+  og_image?: string
 }

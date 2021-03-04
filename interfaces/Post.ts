@@ -9,4 +9,6 @@ export interface IPost {
   slug: string
   status: string
   title: string
+  seo_description?: string
+  og_image?: string
 }
