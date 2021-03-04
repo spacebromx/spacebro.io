@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://spacebro.io/sitemap.xml
