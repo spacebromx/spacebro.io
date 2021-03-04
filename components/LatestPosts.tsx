@@ -3,8 +3,9 @@ import {
   MAX_FEATURED_EXCERPT_CHARS,
 } from '@/constants.ts'
 import { truncateText } from 'utils'
+import readingTime from 'reading-time'
 import Post from '@/components/Post'
-import { IPost } from '@/interfaces/Posts'
+import { IPost } from '@/interfaces/Post'
 
 interface IProps {
   featuredPost: IPost
@@ -12,7 +13,7 @@ interface IProps {
 }
 
 const LatestPosts = ({ featuredPost, posts }: IProps) => {
-  const { id, title, featured, excerpt, slug } = featuredPost
+  const { id, title, featured, excerpt, slug, content } = featuredPost
 
   return (
     <div className="px-4 md:px-8 lg:px-0">
@@ -22,17 +23,19 @@ const LatestPosts = ({ featuredPost, posts }: IProps) => {
         title={title}
         excerpt={truncateText(excerpt, MAX_FEATURED_EXCERPT_CHARS)}
         url={`/articles/${slug}`}
+        readingTime={readingTime(content).text}
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 lg:gap-24 my-24 lg:my-44">
         {posts.map((post) => {
-          const { id, title, excerpt, slug } = post
+          const { id, title, excerpt, slug, content } = post
           return (
             <Post
               key={id}
               title={title}
               excerpt={truncateText(excerpt, MAX_NORMAL_EXCERPT_CHARS)}
               url={`/articles/${slug}`}
+              readingTime={readingTime(content).text}
             />
           )
         })}

@@ -7,9 +7,16 @@ interface IProps {
   url: string
   title: string
   excerpt: string
+  readingTime: string
 }
 
-const Post = ({ isFeatured = false, url, title, excerpt }: IProps) => {
+const Post = ({
+  isFeatured = false,
+  url,
+  title,
+  excerpt,
+  readingTime,
+}: IProps) => {
   return (
     <div className="post grid grid-cols-1 md:grid-cols-12 lg:grid-cols-12 gap-y-4 md:gap-y-0 lg:gap-y-0 relative">
       {isFeatured && (
@@ -59,7 +66,7 @@ const Post = ({ isFeatured = false, url, title, excerpt }: IProps) => {
           />
         </div>
         <div className="absolute bottom-0 flex w-full">
-          <PostFooter url={url} readingText="5 mins read" />
+          <PostFooter url={url} readingText={readingTime} />
         </div>
       </div>
     </div>
