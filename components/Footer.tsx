@@ -31,7 +31,7 @@ const Footer = () => {
             </p>
             <p>
               Made with love from <span className="mr-2">🇲🇽</span> Mexico City
-              by <strong>Alan Medina</strong>, a Software Engineer.
+              by <strong>Alan Medina</strong>, Software Engineer.
             </p>
           </div>
         </div>

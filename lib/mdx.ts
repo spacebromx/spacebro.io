@@ -12,6 +12,8 @@ export async function parseMDXContent(source) {
           remarkPlugins: [
             require('remark-slug'),
             require('remark-code-titles'),
+            require('remark-gemoji'),
+            require('remark-highlight.js'),
           ],
           rehypePlugins: [mdxPrism],
         },

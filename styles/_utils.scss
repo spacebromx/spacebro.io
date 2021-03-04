@@ -41,14 +41,11 @@
 }
 
 .post-content {
-  h2,h3,h4,h5,h6 {
-    font-weight: bold;
-    padding-top: 1.25em;
-  }
+  h2,h3,h4,h5,h6 { @apply font-bold pt-8; }
 
-  h2 { font-size: 1.75em }
-  h3 { font-size: 1.5em }
-  h4 { font-size: 1.25em }
+  h2 { @apply text-4xl}
+  h3 { @apply text-3xl}
+  h4 { @apply text-2xl}
 
   hr {
     border: none;
@@ -57,8 +54,7 @@
   }
 
   strong, b {
-    color: #a5eacb;
-    text-shadow: #03EDF9 0 0 3px;
+    color: white;
   }
 
   i, em {
@@ -76,11 +72,38 @@
 
   ul {
     list-style-type: square;
-    margin-left: 48px
+    @apply ml-12
   }
 
   ol {
     list-style: decimal;
-    margin-left: 48px
+    @apply ml-12
   }
+
+  blockquote {
+    @apply italic text-gray-600 ml-12 pl-8 leading-8;
+
+    border: 6px none;
+    border-left-style: solid;
+    border-image-source: linear-gradient(0deg, #FC2EB1, #07EDF8);
+    border-image-slice: 1;
+
+  }
+}
+
+.highlight-yellow {
+  //@apply font-bold;
+  color: #f4eee4;
+  text-shadow: 0 0 2px #393a33, 0 0 8px #f39f0575, 0 0 2px #f39f0575;
+}
+
+.highlight-pink {
+  //@apply font-bold;
+  color: #fff5f6;
+  text-shadow: 0 0 2px #000, 0 0 10px #fc1f2c75, 0 0 5px #fc1f2c75, 0 0 25px #fc1f2c75;
+}
+
+.highlight-green {
+  color: #72f1b8;
+  text-shadow: 0 0 2px #100c0f, 0 0 10px #257c5575, 0 0 35px #21272475;
 }
