@@ -2,7 +2,7 @@ import AuthorBox from '@/components/AuthorBox'
 import Single from '@/components/Layout/single'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import Fetcher from '@/lib/fetcher'
-import { IPost } from '@/interfaces/Posts'
+import { IPost } from '@/interfaces/Post'
 import { parseMDXContent } from '@/lib/mdx'
 
 interface IProps {

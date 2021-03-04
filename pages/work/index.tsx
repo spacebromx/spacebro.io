@@ -1,8 +1,12 @@
 import React from 'react'
 import ProjectPreview from '@/components/ProjectPreview'
 import Link from 'next/link'
+import { GetStaticProps } from 'next'
+import Fetcher from '@/lib/fetcher'
+import { truncateText } from '@/utils'
+import { MAX_PROJECT_EXCERPT_CHARS } from '@/constants'
 
-const Index = () => {
+const WorkIndex = ({ projects }) => {
   return (
     <div className="projects-list py-14 lg:py-20 px-0 lg:px-0">
       <div className="px-4 md:px-8">
@@ -14,38 +18,30 @@ const Index = () => {
           WordPress to full fledged apps with Node, React and GraphQL.
         </p>
       </div>
-      <ProjectPreview
-        title="Project Title Goes Here In This Place"
-        description="Invite your team to call and text from the same number. Every message shows who sent it - no more guessing. You can even see when someone is viewing a conversation or typing."
-        slug="/work/sample-project"
-        image="/images/project-preview.jpg"
-      />
-      <ProjectPreview
-        title="Project Title Goes Here In This Place"
-        description="Invite your team to call and text from the same number. Every message shows who sent it - no more guessing. You can even see when someone is viewing a conversation or typing."
-        slug="/"
-        image="/images/project-preview.jpg"
-      />
-      <ProjectPreview
-        title="Project Title Goes Here In This Place"
-        description="Invite your team to call and text from the same number. Every message shows who sent it - no more guessing. You can even see when someone is viewing a conversation or typing."
-        slug="/"
-        image="/images/project-preview.jpg"
-      />
-      <ProjectPreview
-        title="Project Title Goes Here In This Place"
-        description="Invite your team to call and text from the same number. Every message shows who sent it - no more guessing. You can even see when someone is viewing a conversation or typing."
-        slug="/"
-        image="/images/project-preview.jpg"
-      />
-      <ProjectPreview
-        title="Project Title Goes Here In This Place"
-        description="Invite your team to call and text from the same number. Every message shows who sent it - no more guessing. You can even see when someone is viewing a conversation or typing."
-        slug="/"
-        image="/images/project-preview.jpg"
-      />
+      {projects.map(({ id, title, slug, excerpt, featured_image }) => (
+        <ProjectPreview
+          key={id}
+          title={title}
+          description={truncateText(excerpt, MAX_PROJECT_EXCERPT_CHARS)}
+          slug={`/work/${slug}`}
+          image={`${process.env.NEXT_PUBLIC_API_URL}/assets/${featured_image}`}
+        />
+      ))}
     </div>
   )
 }
 
-export default Index
+export default WorkIndex
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const projects = await Fetcher(
+    `${process.env.NEXT_PUBLIC_API_URL}/items/projects?filter={"status":{"_eq": "published"}}&limit=2`
+  )
+
+  return {
+    props: {
+      projects: projects.data,
+    },
+    revalidate: 1,
+  }
+}
