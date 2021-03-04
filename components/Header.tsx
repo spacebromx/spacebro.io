@@ -83,7 +83,7 @@ export default function Header() {
           </li>
           <li
             className={`${
-              router.pathname === '/pages/resources'
+              router.asPath === '/pages/resources'
                 ? 'menu__item menu__item--active'
                 : 'menu__item'
             }`}
@@ -94,7 +94,7 @@ export default function Header() {
           </li>
           <li
             className={`${
-              router.pathname === '/pages/about'
+              router.asPath === '/pages/about'
                 ? 'menu__item menu__item--active'
                 : 'menu__item'
             }`}
