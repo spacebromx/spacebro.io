@@ -47,13 +47,16 @@ const Post = ({ isFeatured = false, url, title, excerpt }: IProps) => {
           </Link>
         </h2>
         <div
-          className={`text-gray-600 leading-7 lg:leading-8 ${
-            isFeatured ? 'text-lg md:text-lg lg:text-xl' : 'text-lg md:text-xl'
+          className={`post-content text-gray-600 leading-7 lg:leading-8 ${
+            isFeatured
+              ? 'text-lg md:text-lg lg:text-2xl lg:leading-9'
+              : 'text-lg md:text-xl'
           }`}
         >
-          <div className={isFeatured ? 'mb-12' : 'mb-12 lg:mb-20'}>
-            {excerpt}
-          </div>
+          <div
+            className={isFeatured ? 'mb-12' : 'mb-12 lg:mb-20'}
+            dangerouslySetInnerHTML={{ __html: excerpt }}
+          />
         </div>
         <div className="absolute bottom-0 flex w-full">
           <PostFooter url={url} readingText="5 mins read" />

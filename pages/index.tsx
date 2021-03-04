@@ -3,12 +3,13 @@ import Hero from '@/components/Hero'
 import LatestPosts from '@/components/LatestPosts'
 import SubscriptionForm from '@/components/SubscriptionForm'
 import LatestProjects from '@/components/LatestProjects'
+import { parseMDXContent } from '@lib/mdx'
 
-export default function Home({ featuredPost, posts }) {
+export default function Home({ parsedFeatured, parsedPosts }) {
   return (
     <div>
       <Hero />
-      <LatestPosts featuredPost={featuredPost} posts={posts} />
+      <LatestPosts featuredPost={parsedFeatured} posts={parsedPosts} />
       <LatestProjects />
       <div className="mb-14 md:mb-24 lg:mb-40">
         <SubscriptionForm />
@@ -27,10 +28,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
     ).then((r) => r.json()),
   ])
 
+  const parsedFeatured = await parseMDXContent(featuredPost.data)
+  const parsedPosts = await parseMDXContent(posts.data)
+
   return {
     props: {
-      featuredPost,
-      posts,
+      parsedFeatured,
+      parsedPosts,
     },
     revalidate: 1,
   }

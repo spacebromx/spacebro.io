@@ -1,0 +1,2 @@
+export const MAX_NORMAL_EXCERPT_CHARS = 140
+export const MAX_FEATURED_EXCERPT_CHARS = 260

@@ -40,11 +40,19 @@
   100%{background-position:0% 50%}
 }
 
-.post-content a {
-  color: #72F1B8;
-  text-decoration: underline;
+.post-content {
+  a {
+    color: #72F1B8;
+    text-decoration: underline;
 
-  &:hover {
-    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
   }
+
+  ul {
+    list-style-type: square;
+    margin-left: 32px
+  }
+
 }
