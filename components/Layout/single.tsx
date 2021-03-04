@@ -1,27 +1,64 @@
 import React from 'react'
+import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 import MDXComponents from '@/components/MDXComponents'
 import hydrate from 'next-mdx-remote/hydrate'
 import { MdxRemote } from 'next-mdx-remote/types'
-import { formatDate } from '@/utils'
+import { formatDate, getOGImage, truncateText } from '@/utils'
+import { SEO_SNIPPET_LENGTH, SITE_URL } from '@/constants'
 
 interface IProps {
   title: string
-  date: string
-  featuredImage: string
+  date?: string
+  featured_image?: string
   content: unknown | string
+  excerpt?: string
   children?: React.ReactNode
+  seo_description?: string
+  slug: string
+  og_image?: string
+  urlPrefix: 'articles' | 'work' | 'pages'
 }
 
-const Single = ({
-  title,
-  date,
-  featuredImage,
-  content,
-  children = null,
-}: IProps) => {
+const Single = (props: IProps) => {
+  const {
+    title,
+    date,
+    featured_image: featuredImage,
+    content,
+    children = null,
+    seo_description,
+    excerpt,
+    slug,
+    og_image,
+    urlPrefix,
+  } = props
   return (
     <>
+      <NextSeo
+        title={title}
+        description={
+          seo_description
+            ? truncateText(seo_description, SEO_SNIPPET_LENGTH, false)
+            : truncateText(excerpt, SEO_SNIPPET_LENGTH, false)
+        }
+        openGraph={{
+          type: 'website',
+          url: `${SITE_URL}/${urlPrefix}/${slug}`,
+          title,
+          description: seo_description
+            ? truncateText(seo_description, SEO_SNIPPET_LENGTH, false)
+            : truncateText(excerpt, SEO_SNIPPET_LENGTH, false),
+          images: [
+            {
+              url: getOGImage(og_image, featuredImage),
+              width: 800,
+              height: 600,
+              alt: title,
+            },
+          ],
+        }}
+      />
       <article className="post--single px-4 md:px-8 lg:px-0 py-10 md:py-16">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center leading-10 lg:leading-snug px-2 lg:w-3/4 mb-4 lg:mb-10 text-white mx-auto">
           {title}
