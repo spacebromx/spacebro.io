@@ -14,17 +14,20 @@ export default function Articles({ posts }) {
           All Articles
         </h2>
         <div className="space-y-16">
-          {posts.map(({ title, content, slug, excerpt }, index) => {
-            return (
-              <Post
-                key={index}
-                url={`/articles/${slug}`}
-                title={title}
-                excerpt={truncateText(excerpt, MAX_NORMAL_EXCERPT_CHARS)}
-                readingTime={readingTime(content).text}
-              />
-            )
-          })}
+          {posts.map(
+            ({ title, content, slug, excerpt, featured_image }, index) => {
+              return (
+                <Post
+                  key={index}
+                  url={`/articles/${slug}`}
+                  title={title}
+                  excerpt={truncateText(excerpt, MAX_NORMAL_EXCERPT_CHARS)}
+                  readingTime={readingTime(content).text}
+                  featuredImage={featured_image}
+                />
+              )
+            }
+          )}
         </div>
       </div>
       <div className="col-span-1 md:col-span-2 lg:col-span-4">
