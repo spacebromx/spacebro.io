@@ -41,6 +41,30 @@
 }
 
 .post-content {
+  h2,h3,h4,h5,h6 {
+    font-weight: bold;
+    padding-top: 1.25em;
+  }
+
+  h2 { font-size: 1.75em }
+  h3 { font-size: 1.5em }
+  h4 { font-size: 1.25em }
+
+  hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(250deg, #FC2EB1, #07EDF8);
+  }
+
+  strong, b {
+    color: #a5eacb;
+    text-shadow: #03EDF9 0 0 3px;
+  }
+
+  i, em {
+    font-style: italic;
+  }
+
   a {
     color: #72F1B8;
     text-decoration: underline;
@@ -52,7 +76,11 @@
 
   ul {
     list-style-type: square;
-    margin-left: 32px
+    margin-left: 48px
   }
 
+  ol {
+    list-style: decimal;
+    margin-left: 48px
+  }
 }

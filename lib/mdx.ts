@@ -9,6 +9,10 @@ export async function parseMDXContent(source) {
       content: await renderToString(<string>(<unknown>item.content), {
         components: MDXComponents,
         mdxOptions: {
+          remarkPlugins: [
+            require('remark-slug'),
+            require('remark-code-titles'),
+          ],
           rehypePlugins: [mdxPrism],
         },
       }),
