@@ -60,7 +60,8 @@ export default function Header() {
         <ul className="hidden md:inline-flex lg:inline-flex space-x-12 items-center justify-center md:justify-items-start lg:justify-items-start">
           <li
             className={`${
-              router.pathname === '/articles'
+              router.pathname === '/articles' ||
+              router.pathname === '/articles/[slug]'
                 ? 'menu__item menu__item--active'
                 : 'menu__item'
             }`}
@@ -82,7 +83,7 @@ export default function Header() {
           </li>
           <li
             className={`${
-              router.pathname === '/pages/resources'
+              router.asPath === '/pages/resources'
                 ? 'menu__item menu__item--active'
                 : 'menu__item'
             }`}
@@ -93,7 +94,7 @@ export default function Header() {
           </li>
           <li
             className={`${
-              router.pathname === '/pages/about'
+              router.asPath === '/pages/about'
                 ? 'menu__item menu__item--active'
                 : 'menu__item'
             }`}

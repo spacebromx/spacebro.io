@@ -1,5 +1,9 @@
 import Post from '@/components/Post'
 import TopArticles from '@/components/TopArticles'
+import { GetStaticProps } from 'next'
+import { MAX_NORMAL_EXCERPT_CHARS } from '@/constants.ts'
+import { truncateText } from 'utils'
+import Fetcher from '@/lib/fetcher'
 
 const mockData = new Array(20).fill({
   title:
@@ -14,7 +18,7 @@ const mockData = new Array(20).fill({
     'proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
 })
 
-export default function Articles() {
+export default function Articles({ posts }) {
   return (
     <div className="posts-listing grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-24 md:gap-12 lg:gap-24 mx-4 md:mx-8 lg:mx-0 mt-14 mb-16 lg:my-20">
       <div className="col-span-1 md:col-span-4 lg:col-span-8">
@@ -22,14 +26,21 @@ export default function Articles() {
           All Articles
         </h2>
         <div className="space-y-16">
-          {mockData.map(({ title, content, url }, index) => (
-            <Post
-              key={index}
-              url={url}
-              title={title}
-              excerpt={content.substr(0, 150)}
-            />
-          ))}
+          {posts.map(({ title, content, slug, excerpt }, index) => {
+            const trimmedExcerpt = `${excerpt.substr(
+              0,
+              MAX_NORMAL_EXCERPT_CHARS
+            )} […]`
+
+            return (
+              <Post
+                key={index}
+                url={`/articles/${slug}`}
+                title={title}
+                excerpt={truncateText(excerpt, MAX_NORMAL_EXCERPT_CHARS)}
+              />
+            )
+          })}
         </div>
       </div>
       <div className="col-span-1 md:col-span-2 lg:col-span-4">
@@ -37,4 +48,15 @@ export default function Articles() {
       </div>
     </div>
   )
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { data: posts } = await Fetcher(
+    `${process.env.NEXT_PUBLIC_API_URL}/items/articles?filter={"status":{"_eq": "published"}}&limit=6`
+  )
+
+  return {
+    props: { posts },
+    revalidate: 1,
+  }
 }
