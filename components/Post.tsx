@@ -28,17 +28,21 @@ const Post = ({
             <span className="font-semibold">featured</span>
           </div>
           <div className="col-span-1 md:col-start-1 md:col-end-5 lg:col-start-1 lg:col-end-5">
-            <Image
-              src={
-                featuredImage
-                  ? `${process.env.NEXT_PUBLIC_API_URL}/assets/${featuredImage}`
-                  : `${SITE_URL}/images/featured-placeholder.jpg`
-              }
-              alt="post"
-              width="485"
-              height="416"
-              className="rounded-2xl"
-            />
+            <Link href={url}>
+              <a>
+                <Image
+                  src={
+                    featuredImage
+                      ? `${process.env.NEXT_PUBLIC_API_URL}/assets/${featuredImage}?fit=cover&width=400&height=343&quality=75`
+                      : `${SITE_URL}/images/featured-placeholder.jpg`
+                  }
+                  alt="post"
+                  width="400"
+                  height="343"
+                  className="rounded-2xl"
+                />
+              </a>
+            </Link>
           </div>
         </>
       )}

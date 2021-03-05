@@ -68,11 +68,15 @@ const Single = (props: IProps) => {
         </div>
         {featuredImage && (
           <div className="pb-6 md:pb-10 lg:pb-14 text-center">
-            <Image
-              src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${featuredImage}`}
-              width="450"
-              height="330"
-            />
+            <div className="content mx-auto">
+              <div className="w-full lg:w-3/5 mx-auto flex justify-center">
+                <img
+                  src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${featuredImage}`}
+                  className="max-w-full"
+                  alt={title}
+                />
+              </div>
+            </div>
           </div>
         )}
         <div className="post-content mx-auto text-xl leading-8 space-y-6 text-gray-700 md:w-3/4 md:text-xl md:leading-8 lg:leading-9 lg:w-3/5">

@@ -1,6 +1,11 @@
 export default async function Fetcher(...args) {
-  // @ts-ignore
-  const res = await fetch(...args)
+  try {
+    // @ts-ignore
+    const res = await fetch(...args)
 
-  return res.json()
+    return res.json()
+  } catch (e) {
+    console.error(e)
+    return null
+  }
 }

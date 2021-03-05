@@ -30,8 +30,8 @@ export default function Header() {
           <a className="ml-4 md:ml-8 lg:ml-0">
             <Image
               src="/images/logo.svg"
-              width="219"
-              height="59"
+              width="220"
+              height="60"
               alt="spacebro by Alan Medina"
             />
           </a>

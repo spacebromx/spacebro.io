@@ -61,6 +61,13 @@
     font-style: italic;
   }
 
+  code {
+    @apply bg-gray-900 text-teal-600 text-sm py-1 px-2 rounded-lg;
+
+    text-shadow: 0 0 2px rgba(255, 255, 255, 1);
+
+  }
+
   a {
     color: #72F1B8;
     text-decoration: underline;
@@ -81,13 +88,21 @@
   }
 
   blockquote {
-    @apply italic text-gray-600 ml-12 pl-8 leading-8;
+    @apply italic text-gray-600 ml-4 md:ml-12 lg:ml-12 pl-4 md:pl-8 lg:pl-8 leading-8;
 
-    border: 6px none;
+    border: none 6px;
     border-left-style: solid;
     border-image-source: linear-gradient(0deg, #FC2EB1, #07EDF8);
     border-image-slice: 1;
 
+    @media screen and (max-width: 640px) {
+      border-right-style: none;
+      border-right-width: 0;
+      border-bottom-style: none;
+      border-bottom-width: 0;
+      border-top-style: none;
+      border-top-width: 0;
+    }
   }
 }
 
