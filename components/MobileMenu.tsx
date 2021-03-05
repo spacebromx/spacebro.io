@@ -6,7 +6,7 @@ interface IProps {
 
 const MobileMenu = ({ onClose }: IProps) => {
   return (
-    <div className="mobile-menu absolute top-0 bottom-0 left-0 right-0 bg-gray-800 h-screen opacity-100 z-30 grid place-items-center overflow-y-hidden">
+    <div className="mobile-menu fixed top-0 bottom-0 left-0 right-0 bg-gray-800 h-screen opacity-100 z-40 grid place-items-center overflow-y-hidden">
       <button className="absolute top-0 right-0 mr-2 mt-4" onClick={onClose}>
         <svg
           width="56"

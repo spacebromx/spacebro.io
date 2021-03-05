@@ -75,7 +75,7 @@ const Single = (props: IProps) => {
             />
           </div>
         )}
-        <div className="post-content mx-auto text-xl space-y-6 text-gray-700 md:w-3/4 md:text-xl md:leading-8 lg:leading-9 lg:w-3/5">
+        <div className="post-content mx-auto text-xl leading-8 space-y-6 text-gray-700 md:w-3/4 md:text-xl md:leading-8 lg:leading-9 lg:w-3/5">
           {hydrate(content as MdxRemote.Source, {
             components: MDXComponents,
           })}
