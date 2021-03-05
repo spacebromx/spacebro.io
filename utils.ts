@@ -15,7 +15,9 @@ export const formatDate = (dateString: string): string => {
     day: 'numeric',
   }
 
-  return new Date(dateString).toLocaleString('en-US', options)
+  const tmpDate: string = dateString ? dateString : new Date().toISOString()
+
+  return new Date(tmpDate).toLocaleString('en-US', options)
 }
 
 export function getOGImage(og_image: string, featured_image: string): string {
