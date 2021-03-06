@@ -38,6 +38,7 @@ export default function Header() {
         </Link>
         <div className="burger-menu md:hidden lg:hidden absolute right-0 mr-4 mt-1.5">
           <button
+            aria-label="show mobile menu"
             className="pt-1"
             onClick={() => {
               setShowMenu(true)

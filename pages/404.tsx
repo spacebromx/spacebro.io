@@ -20,7 +20,10 @@ export default function ErrorPage() {
           <div className="text-center">
             <Link href="/">
               <a>
-                <button className="font-normal text-lg bg-gradient-to-r hover:bg-gradient-to-l from-yellow-900 to-teal-900 px-6 py-2 rounded-lg">
+                <button
+                  aria-label="go back"
+                  className="font-normal text-lg bg-gradient-to-r hover:bg-gradient-to-l from-yellow-900 to-teal-900 px-6 py-2 rounded-lg"
+                >
                   &larr; Go back
                 </button>
               </a>

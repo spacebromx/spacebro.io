@@ -27,7 +27,10 @@ const LatestProjects = ({ projects }: IProps) => {
         <div className="text-center">
           <Link href="/work">
             <a>
-              <button className="font-normal text-lg bg-gradient-to-r hover:bg-gradient-to-l from-teal-900 to-pink-900 px-6 py-2 rounded-lg">
+              <button
+                className="font-normal text-lg bg-gradient-to-r hover:bg-gradient-to-l from-teal-900 to-pink-900 px-6 py-2 rounded-lg"
+                aria-label="see more projects"
+              >
                 See more projects 🔥
               </button>
             </a>
