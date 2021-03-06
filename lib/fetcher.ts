@@ -5,7 +5,6 @@ export default async function Fetcher(...args) {
 
     return res.json()
   } catch (e) {
-    console.error(e)
     return null
   }
 }

@@ -11,7 +11,10 @@ const PostFooter = ({ url = '', readingText, onClick }: IProps) => {
     <>
       <div className="flex-1">
         <Link href={url}>
-          <a className="text-green-500 font-semibold inline-flex text-base lg:text-xl hover:text-orange-900 transition-colors">
+          <a
+            className="text-green-500 font-semibold inline-flex text-base lg:text-xl hover:text-orange-900 transition-colors"
+            aria-label="read the full article"
+          >
             Read more &rarr;
           </a>
         </Link>
@@ -33,7 +36,7 @@ const PostFooter = ({ url = '', readingText, onClick }: IProps) => {
         <span className="text-gray-500">{readingText}</span>
       </div>
       <div className="flex items-center ml-4">
-        <button onClick={onClick}>
+        <button onClick={onClick} aria-label="favorite this article">
           <svg
             width="18"
             height="18"

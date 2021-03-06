@@ -1,5 +1,7 @@
 import renderToString from 'next-mdx-remote/render-to-string'
 import mdxPrism from 'mdx-prism'
+import autolinkHeadings from 'rehype-autolink-headings'
+import slug from 'rehype-slug'
 import MDXComponents from '@/components/MDXComponents'
 
 export async function parseMDXContent(source) {
@@ -10,12 +12,26 @@ export async function parseMDXContent(source) {
         components: MDXComponents,
         mdxOptions: {
           remarkPlugins: [
-            require('remark-slug'),
             require('remark-code-titles'),
             require('remark-gemoji'),
             require('remark-highlight.js'),
           ],
-          rehypePlugins: [mdxPrism],
+          rehypePlugins: [
+            mdxPrism,
+            slug,
+            [
+              require('rehype-autolink-headings'),
+              {
+                behavior: 'prepend',
+                properties: { className: ['anchor-link'] },
+                content: {
+                  type: 'element',
+                  tagName: 'span',
+                  children: [{ type: 'text', value: '#' }],
+                },
+              },
+            ],
+          ],
         },
       }),
     }
