@@ -11,10 +11,17 @@ const SubscriptionForm = () => {
           Join my newsletter and get cool articles about Web Development, Design
           and more cool tech-related stuff.
         </p>
+        <label
+          className="w-5/6 mx-auto mb-2 md:mb-0 lg:mb-0 text-left md:mr-4 lg:mr-4 block md:inline lg:inline"
+          htmlFor="email"
+        >
+          E-Mail
+        </label>
         <input
+          id="email"
           type="email"
           name="email"
-          placeholder="Enter your e-mail here"
+          placeholder="you@example.com"
           className="w-3/5 md:w-2/5 lg:w-1/4 px-4 py-2 bg-gray-300 border border-gray-800 rounded-tl-md rounded-bl-md outline-none focus:outline-none focus:ring focus:border-pink-300 placeholder-gray-500"
         />
         <input

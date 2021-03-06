@@ -24,7 +24,7 @@ const Post = ({
     <div className="post grid grid-cols-1 md:grid-cols-12 lg:grid-cols-12 gap-y-4 md:gap-y-0 lg:gap-y-0 relative">
       {isFeatured && (
         <>
-          <div className="absolute -left-1 md:-left-4 lg:-left-4 top-8 bg-teal-600 z-10 px-3 py-1 shadow-md">
+          <div className="absolute -left-1 md:-left-4 lg:-left-4 top-8 bg-orange-900 z-10 px-3 py-1 shadow-md rounded-lg">
             <span className="font-semibold">featured</span>
           </div>
           <div className="col-span-1 md:col-start-1 md:col-end-5 lg:col-start-1 lg:col-end-5">
