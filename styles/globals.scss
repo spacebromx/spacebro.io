@@ -4,6 +4,10 @@
 
 @import "_utils.scss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   background-color: #302441;
