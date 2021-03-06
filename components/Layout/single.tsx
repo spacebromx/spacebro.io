@@ -68,12 +68,13 @@ const Single = (props: IProps) => {
         </div>
         {featuredImage && (
           <div className="pb-6 md:pb-10 lg:pb-14 text-center">
-            <div className="content mx-auto">
-              <div className="w-full lg:w-3/5 mx-auto flex justify-center">
-                <img
+            <div className="content mx-auto ">
+              <div className="w-full">
+                <Image
                   src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${featuredImage}`}
-                  className="max-w-full"
                   alt={title}
+                  width={500}
+                  height={420}
                 />
               </div>
             </div>
