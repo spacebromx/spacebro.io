@@ -43,7 +43,7 @@ export default function Articles({ posts }) {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { data: posts } = await Fetcher(
-    `${process.env.NEXT_PUBLIC_API_URL}/items/articles?filter={"status":{"_eq": "published"}}&limit=6`
+    `${process.env.NEXT_PUBLIC_API_URL}/items/articles?filter={"status":{"_eq": "published"}}&limit=6&sort=-date_created`
   )
 
   return {

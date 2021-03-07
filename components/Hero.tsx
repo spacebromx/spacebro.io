@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
     <div className="text-center py-16 lg:py-32 px-4 lg:px-0">
-      <div className="font-extrabold text-5xl lg:text-7xl text-center leading-tight mb-12 lg:mb-16">
+      <div className="font-extrabold text-4xl lg:text-7xl text-center leading-tight mb-12 lg:mb-16">
         <p>Hello there! 👋</p>
         <p>
           I'm{' '}

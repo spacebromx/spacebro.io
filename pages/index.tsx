@@ -35,7 +35,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       `${process.env.NEXT_PUBLIC_API_URL}/items/articles?filter={"status":{"_eq": "published"},"featured":{"_eq": false}}&limit=6`
     ),
     Fetcher(
-      `${process.env.NEXT_PUBLIC_API_URL}/items/projects?filter={"status":{"_eq": "published"}}&limit=2`
+      `${process.env.NEXT_PUBLIC_API_URL}/items/projects?filter={"status":{"_eq": "published"}}&limit=3&sort=sort,-date_created`
     ),
   ])
 
