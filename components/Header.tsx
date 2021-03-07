@@ -63,7 +63,7 @@ export default function Header() {
           </li>
           <li
             className={`${
-              router.pathname === '/work'
+              router.asPath.startsWith('/work')
                 ? 'menu__item menu__item--active'
                 : 'menu__item'
             }`}
