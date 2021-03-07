@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
     <div className="text-center py-16 lg:py-32 px-4 lg:px-0">
-      <div className="font-extrabold text-4xl lg:text-7xl text-center leading-tight mb-12 lg:mb-16">
+      <div className="font-extrabold text-4xl md:text-7xl lg:text-7xl text-center leading-tight mb-12 lg:mb-16">
         <p>Hello there! 👋</p>
         <p>
           I'm{' '}
@@ -10,7 +10,7 @@ const Hero = () => {
           </span>
         </p>
       </div>
-      <p className="text-xl md:text-xl lg:text-2xl font-normal w-5/6 md:w-4/6 lg:w-4/6 mx-auto mb-16 lg:mb-24">
+      <p className="text-xl md:text-xl md:text-2xl lg:text-2xl font-normal w-5/6 md:w-4/6 lg:w-4/6 mx-auto mb-16 lg:mb-24">
         Welcome to my personal place on the Internet. I write code to pay the
         bills, but also enjoy writing and sharing cool stuff.
       </p>

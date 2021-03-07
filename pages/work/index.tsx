@@ -37,7 +37,7 @@ export default WorkIndex
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const projects = await Fetcher(
-    `${process.env.NEXT_PUBLIC_API_URL}/items/projects?filter={"status":{"_eq": "published"}}&sort=sort,-date_created`
+    `${process.env.NEXT_PUBLIC_API_URL}/items/projects?filter={"status":{"_eq": "published"}}&sort=sort,-date_created&limit=100`
   )
 
   return {

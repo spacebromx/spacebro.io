@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "_utils.scss";
+@import '_utils.scss';
 
 html {
   scroll-behavior: smooth;
@@ -31,14 +31,13 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: #07EDF8;
+  background: #07edf8;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #FC2EB1;
+  background-color: #fc2eb1;
   border-radius: 20px;
 }
-
 
 @font-face {
   font-family: 'SF Pro Display';
@@ -47,8 +46,8 @@ body::-webkit-scrollbar-thumb {
   font-display: optional;
   font-weight: 700;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-  U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-  U+FEFF, U+FFFD;
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
 }
 
 @font-face {
@@ -58,8 +57,8 @@ body::-webkit-scrollbar-thumb {
   font-display: optional;
   font-weight: 600;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-  U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-  U+FEFF, U+FFFD;
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
 }
 
 @font-face {
@@ -69,8 +68,8 @@ body::-webkit-scrollbar-thumb {
   font-display: optional;
   font-weight: 500;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-  U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-  U+FEFF, U+FFFD;
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
 }
 
 @font-face {
@@ -80,18 +79,18 @@ body::-webkit-scrollbar-thumb {
   font-display: optional;
   font-weight: 300;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-  U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-  U+FEFF, U+FFFD;
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
 }
 
 .glow-teal {
-  text-shadow: #03EDF9 0 0 3px;
+  text-shadow: #03edf9 0 0 3px;
 }
 
 // Syntax Highlighting
 
-code[class*="language-"],
-pre[class*="language-"] {
+code[class*='language-'],
+pre[class*='language-'] {
   color: #f92aad;
   text-shadow: 0 0 2px #100c0f, 0 0 5px #dc078e33, 0 0 10px #fff3;
   background: none;
@@ -115,25 +114,25 @@ pre[class*="language-"] {
   margin-top: 0 !important;
   margin-bottom: 50px !important;
 
-  @apply rounded-b-lg
+  @apply rounded-b-lg;
 }
 
 /* Code blocks */
-pre[class*="language-"] {
+pre[class*='language-'] {
   padding: 1em;
-  margin: .5em 0;
+  margin: 0.5em 0;
   overflow: auto;
 }
 
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-  background-color: #281D37 !important;
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background-color: #281d37 !important;
 }
 
 /* Inline code */
-:not(pre) > code[class*="language-"] {
-  padding: .1em;
-  border-radius: .3em;
+:not(pre) > code[class*='language-'] {
+  padding: 0.1em;
+  border-radius: 0.3em;
   white-space: normal;
 }
 
@@ -173,12 +172,14 @@ pre[class*="language-"] {
 .token.selector .token.id,
 .token.function {
   color: #fdfdfd;
-  text-shadow: 0 0 2px #001716, 0 0 3px #03edf975, 0 0 5px #03edf975, 0 0 8px #03edf975;
+  text-shadow: 0 0 2px #001716, 0 0 3px #03edf975, 0 0 5px #03edf975,
+    0 0 8px #03edf975;
 }
 
 .token.class-name {
   color: #fff5f6;
-  text-shadow: 0 0 2px #000, 0 0 10px #fc1f2c75, 0 0 5px #fc1f2c75, 0 0 25px #fc1f2c75;
+  text-shadow: 0 0 2px #000, 0 0 10px #fc1f2c75, 0 0 5px #fc1f2c75,
+    0 0 25px #fc1f2c75;
 }
 
 .token.constant,
@@ -230,7 +231,7 @@ pre[class*="language-"] {
 .remark-code-title {
   margin-top: 50px !important;
 
-  @apply py-2 px-5 text-sm text-gray-800 rounded-t-lg bg-gradient-to-r from-teal-900 to-yellow-900
+  @apply py-2 px-5 text-sm text-gray-800 rounded-t-lg bg-gradient-to-r from-teal-900 to-yellow-900;
 }
 
 .remark-code-title + pre {
@@ -238,7 +239,7 @@ pre[class*="language-"] {
 }
 
 .mdx-marker {
-  @apply bg-gray-600
+  @apply bg-gray-600;
 }
 
 /* Remove Safari input shadow on mobile */
