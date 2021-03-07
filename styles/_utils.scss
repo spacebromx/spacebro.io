@@ -63,8 +63,9 @@
         position: relative;
         width: 0;
         height: 4em;
-        background: red;
         margin-top: -1em;
+        visibility: hidden;
+        pointer-events: none;
       }
     }
   }
