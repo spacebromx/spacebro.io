@@ -1,6 +1,7 @@
 import React from 'react'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
+import ViewCounter from '@/components/ViewCounter'
 import MDXComponents from '@/components/MDXComponents'
 import hydrate from 'next-mdx-remote/hydrate'
 import { MdxRemote } from 'next-mdx-remote/types'
@@ -18,6 +19,7 @@ interface IProps {
   slug: string
   og_image?: string
   urlPrefix: 'articles' | 'work' | 'pages'
+  showViewCount?: boolean
 }
 
 const Single = (props: IProps) => {
@@ -32,6 +34,7 @@ const Single = (props: IProps) => {
     slug,
     og_image,
     urlPrefix,
+    showViewCount = false,
   } = props
   return (
     <>
@@ -60,11 +63,16 @@ const Single = (props: IProps) => {
         }}
       />
       <article className="post--single px-4 md:px-8 lg:px-0 py-10 md:py-16">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center leading-10 lg:leading-snug px-2 lg:w-3/4 mb-4 lg:mb-10 text-white mx-auto">
+        <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-center leading-10 lg:leading-snug px-2 lg:w-3/4 mb-4 lg:mb-10 text-white mx-auto">
           {title}
         </h1>
-        <div className="text-center mb-10 font-normal text-sm md:text-base italic">
+        <div className="text-center mb-10 font-normal text-sm md:text-base relative">
           Last update: {formatDate(date)}
+          {showViewCount ? (
+            <>
+              {' : '} <ViewCounter slug={slug} />
+            </>
+          ) : null}
         </div>
         {featuredImage && (
           <div className="pb-6 md:pb-10 lg:pb-14 text-center">

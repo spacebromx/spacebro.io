@@ -11,7 +11,7 @@ interface IProps {
 
 export default function Post({ post }: IProps) {
   return (
-    <Single {...post} urlPrefix="articles">
+    <Single {...post} urlPrefix="articles" showViewCount>
       <AuthorBox />
     </Single>
   )
