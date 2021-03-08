@@ -7,5 +7,5 @@ export default async (_, res) => {
     (total: number, value: number) => total + value
   )
 
-  return res.status(200).json({ total: allViews })
+  return res.status(200).json({ total: allViews, items: views })
 }

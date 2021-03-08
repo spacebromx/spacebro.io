@@ -19,6 +19,7 @@ interface IProps {
   slug: string
   og_image?: string
   urlPrefix: 'articles' | 'work' | 'pages'
+  showViewCount?: boolean
 }
 
 const Single = (props: IProps) => {
@@ -33,6 +34,7 @@ const Single = (props: IProps) => {
     slug,
     og_image,
     urlPrefix,
+    showViewCount = false,
   } = props
   return (
     <>
@@ -65,7 +67,12 @@ const Single = (props: IProps) => {
           {title}
         </h1>
         <div className="text-center mb-10 font-normal text-sm md:text-base relative">
-          Last update: {formatDate(date)} : <ViewCounter slug={slug} />
+          Last update: {formatDate(date)}
+          {showViewCount ? (
+            <>
+              {' : '} <ViewCounter slug={slug} />
+            </>
+          ) : null}
         </div>
         {featuredImage && (
           <div className="pb-6 md:pb-10 lg:pb-14 text-center">
