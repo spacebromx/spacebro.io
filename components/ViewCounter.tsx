@@ -18,7 +18,7 @@ const ViewCounter = ({ slug }: { slug: string }) => {
 
   return (
     <span className="text-yellow-900">{`${
-      views ? format(views) : '–––'
+      views ? format(views.count) : '–––'
     } views`}</span>
   )
 }
