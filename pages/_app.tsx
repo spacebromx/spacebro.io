@@ -1,12 +1,34 @@
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 import { MDXEmbedProvider } from 'mdx-embed'
 import { AppProps } from 'next/app'
 import Layout from '@/components/Layout.tsx'
 import { DefaultSeo } from 'next-seo'
+import * as Fathom from 'fathom-client'
 
 import '../styles/globals.scss'
 import SEO from '@/next-seo.config'
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter()
+
+  useEffect(() => {
+    if (process.env.NODE_ENV === 'production') {
+      Fathom.load(process.env.FATHOM_SITE_ID, {
+        includedDomains: ['spacebro.io'],
+      })
+    }
+
+    function onRouteChangeComplete() {
+      Fathom.trackPageview()
+    }
+    router.events.on('routeChangeComplete', onRouteChangeComplete)
+
+    return () => {
+      router.events.off('routeChangeComplete', onRouteChangeComplete)
+    }
+  }, [])
+
   return (
     <>
       <DefaultSeo {...SEO} />
