@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     if (process.env.NODE_ENV === 'production') {
-      Fathom.load(process.env.FATHOM_SITE_ID, {
+      Fathom.load(process.env.NEXT_PUBLIC_FATHOM_SITE_ID, {
         includedDomains: ['spacebro.io'],
       })
     }
