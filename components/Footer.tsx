@@ -91,7 +91,7 @@ const Footer = () => {
             <li>
               <a
                 href="https://www.linkedin.com/in/alan-medina/"
-                rel="me"
+                rel="me noopener"
                 className="text-orange-300"
                 target="_blank"
               >
@@ -101,7 +101,7 @@ const Footer = () => {
             <li>
               <a
                 href="https://github.com/spacebromx"
-                rel="me"
+                rel="me noopener"
                 target="_blank"
                 className="text-orange-300"
               >
