@@ -11,7 +11,7 @@ interface IProps {
 
 const SingleWork = ({ project }: IProps) => {
   return (
-    <Single {...project} urlPrefix="work">
+    <Single {...project} urlPrefix="work" showViewCount={false}>
       <AuthorBox />
     </Single>
   )
