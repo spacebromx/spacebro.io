@@ -89,12 +89,22 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="#/" className="text-orange-300">
+              <a
+                href="https://www.linkedin.com/in/alan-medina/"
+                rel="me"
+                className="text-orange-300"
+                target="_blank"
+              >
                 LinkedIn
               </a>
             </li>
             <li>
-              <a href="#/" className="text-orange-300">
+              <a
+                href="https://github.com/spacebromx"
+                rel="me"
+                target="_blank"
+                className="text-orange-300"
+              >
                 Github
               </a>
             </li>
@@ -135,7 +145,6 @@ const Footer = () => {
             <li>
               <a
                 href="https://www.freecodecamp.org/"
-                rel="nofollow"
                 className="text-orange-300 break-words"
               >
                 freeCodeCamp
@@ -144,7 +153,6 @@ const Footer = () => {
             <li>
               <a
                 href="https://developer.mozilla.org/en-US/"
-                rel="nofollow"
                 className="text-orange-300"
               >
                 MDN
