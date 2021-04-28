@@ -22,7 +22,7 @@
     "next": "10.0.6",
     "next-mdx-remote": "2.1.4",
     "next-seo": "4.23.0",
-    "postcss": "8.2.6",
+    "postcss": "8.2.13",
     "preact": "10.5.13",
     "prettier": "2.2.1",
     "react": "17.0.1",
