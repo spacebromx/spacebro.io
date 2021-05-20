@@ -19,7 +19,7 @@
     "fathom-client": "3.0.0",
     "firebase-admin": "9.5.0",
     "mdx-prism": "0.3.1",
-    "next": "10.0.6",
+    "next": "10.2.2",
     "next-mdx-remote": "2.1.4",
     "next-seo": "4.23.0",
     "postcss": "8.2.6",
