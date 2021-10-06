@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { MDXEmbedProvider } from 'mdx-embed'
 import { AppProps } from 'next/app'
-import Layout from '@/components/Layout.tsx'
+import Layout from '@/components/Layout'
 import { DefaultSeo } from 'next-seo'
 import * as Fathom from 'fathom-client'
 

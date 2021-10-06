@@ -22,7 +22,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     `${process.env.NEXT_PUBLIC_API_URL}/items/articles?filter={"status":{"_eq": "published"}}`
   )
 
-  const paths = posts.map((post: IPost) => ({
+  const paths = posts?.map((post: IPost) => ({
     params: { id: post.id, slug: post.slug },
   }))
 

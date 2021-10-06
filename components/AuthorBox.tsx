@@ -9,6 +9,7 @@ const AuthorBox = () => {
           width="90"
           height="90"
           className="rounded-full"
+          alt="author"
         />
       </div>
       <div className="col-start-2 col-end-5 text-normal md:col-start-2 md:col-end-7">

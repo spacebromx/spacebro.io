@@ -31,6 +31,7 @@ const ProjectPreview = ({ title, slug, description, image }: IProps) => {
               src={image}
               width="450"
               height="330"
+              alt={title}
             />
           </a>
         </Link>
