@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import db from '@/lib/firebase'
 import Fetcher from '@/lib/fetcher'
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const logViews =  async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
     const ref = db.ref('views').child(req.query.slug as string)
     const post = await Fetcher(
@@ -32,3 +32,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(200).json({ total: views })
   }
 }
+
+export default logViews
