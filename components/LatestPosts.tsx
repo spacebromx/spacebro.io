@@ -1,7 +1,7 @@
 import {
   MAX_NORMAL_EXCERPT_CHARS,
   MAX_FEATURED_EXCERPT_CHARS,
-} from '@/constants.ts'
+} from '@/constants'
 import { truncateText } from 'utils'
 import readingTime from 'reading-time'
 import Post from '@/components/Post'

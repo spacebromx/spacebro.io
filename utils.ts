@@ -17,6 +17,7 @@ export const formatDate = (dateString: string): string => {
 
   const tmpDate: string = dateString ? dateString : new Date().toISOString()
 
+  // @ts-ignore
   return new Date(tmpDate).toLocaleString('en-US', options)
 }
 
