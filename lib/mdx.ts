@@ -1,26 +1,26 @@
-import renderToString from 'next-mdx-remote/render-to-string'
+import { serialize } from 'next-mdx-remote/serialize'
 import mdxPrism from 'mdx-prism'
-import autolinkHeadings from 'rehype-autolink-headings'
+import autoLinkHeadings from 'rehype-autolink-headings'
 import slug from 'rehype-slug'
-import MDXComponents from '@/components/MDXComponents'
+import remarkGemoji from "remark-gemoji";
+import remarkHighlightjs from "remark-highlight.js";
 
 export async function parseMDXContent(source) {
   const promises = source.map(async (item) => {
     return {
       ...item,
-      content: await renderToString(<string>(<unknown>item.content), {
-        components: MDXComponents,
+      content: await serialize(<string>(<unknown>item.content), {
         mdxOptions: {
           remarkPlugins: [
             require('remark-code-titles'),
-            require('remark-gemoji'),
-            require('remark-highlight.js'),
+            remarkGemoji,
+            remarkHighlightjs
           ],
           rehypePlugins: [
             mdxPrism,
             slug,
             [
-              require('rehype-autolink-headings'),
+              autoLinkHeadings,
               {
                 behavior: 'prepend',
                 properties: { className: ['anchor-link'] },

@@ -3,8 +3,7 @@ import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 import ViewCounter from '@/components/ViewCounter'
 import MDXComponents from '@/components/MDXComponents'
-import hydrate from 'next-mdx-remote/hydrate'
-import { MdxRemote } from 'next-mdx-remote/types'
+import { MDXRemote } from 'next-mdx-remote'
 import { formatDate, getOGImage, truncateText } from '@/utils'
 import { SEO_SNIPPET_LENGTH, SITE_URL } from '@/constants'
 
@@ -89,9 +88,8 @@ const Single = (props: IProps) => {
           </div>
         )}
         <div className="post-content mx-auto text-xl leading-8 space-y-6 text-gray-700 md:w-3/4 md:text-xl md:leading-8 lg:leading-9 lg:w-3/5">
-          {hydrate(content as MdxRemote.Source, {
-            components: MDXComponents,
-          })}
+          {/*// @ts-ignore*/}
+          <MDXRemote {...content} components={MDXComponents} />
         </div>
       </article>
       {children}
