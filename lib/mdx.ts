@@ -4,6 +4,7 @@ import autoLinkHeadings from 'rehype-autolink-headings'
 import slug from 'rehype-slug'
 import remarkGemoji from "remark-gemoji";
 import remarkHighlightjs from "remark-highlight.js";
+import remarkToc from 'remark-toc'
 
 export async function parseMDXContent(source) {
   const promises = source.map(async (item) => {
@@ -14,7 +15,8 @@ export async function parseMDXContent(source) {
           remarkPlugins: [
             require('remark-code-titles'),
             remarkGemoji,
-            remarkHighlightjs
+            remarkHighlightjs,
+            remarkToc,
           ],
           rehypePlugins: [
             mdxPrism,
