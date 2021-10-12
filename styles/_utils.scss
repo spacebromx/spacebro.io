@@ -128,15 +128,12 @@
     border-left-style: solid;
     border-image-source: linear-gradient(0deg, #fc2eb1, #07edf8);
     border-image-slice: 1;
-
-    @media screen and (max-width: 1199px) {
-      border-right-style: none;
-      border-right-width: 0;
-      border-bottom-style: none;
-      border-bottom-width: 0;
-      border-top-style: none;
-      border-top-width: 0;
-    }
+    border-right-style: none;
+    border-right-width: 0;
+    border-bottom-style: none;
+    border-bottom-width: 0;
+    border-top-style: none;
+    border-top-width: 0;
   }
 }
 
