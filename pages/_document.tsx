@@ -10,6 +10,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link
             rel="preload"
             href="/fonts/SF-Pro-Display-Heavy.woff2"

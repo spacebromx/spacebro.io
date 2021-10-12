@@ -122,18 +122,21 @@
   }
 
   blockquote {
-    @apply italic text-gray-600 ml-4 md:ml-12 lg:ml-12 pl-4 md:pl-8 lg:pl-8 leading-8;
+    @apply italic text-gray-600 ml-4 md:ml-12 lg:ml-12 pl-4 md:pl-8 lg:pl-8 leading-8 max-w-3xl overflow-x-scroll;
 
     border: none 6px;
     border-left-style: solid;
     border-image-source: linear-gradient(0deg, #fc2eb1, #07edf8);
     border-image-slice: 1;
-    border-right-style: none;
-    border-right-width: 0;
-    border-bottom-style: none;
-    border-bottom-width: 0;
-    border-top-style: none;
-    border-top-width: 0;
+
+    @media screen and (max-width: 1536px) {
+      border-right-style: none;
+      border-right-width: 0;
+      border-bottom-style: none;
+      border-bottom-width: 0;
+      border-top-style: none;
+      border-top-width: 0;
+    }
   }
 }
 
