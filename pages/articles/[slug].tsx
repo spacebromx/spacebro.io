@@ -1,4 +1,5 @@
 import AuthorBox from '@/components/AuthorBox'
+import TwitterCTA from "@/components/TwitterCTA";
 import Single from '@/components/Layout/single'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import Fetcher from '@/lib/fetcher'
@@ -12,6 +13,7 @@ interface IProps {
 export default function Post({ post }: IProps) {
   return (
     <Single {...post} urlPrefix="articles" showViewCount>
+      <TwitterCTA />
       <AuthorBox />
     </Single>
   )

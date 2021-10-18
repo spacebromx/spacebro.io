@@ -1,7 +1,6 @@
 import { GetStaticProps } from 'next'
 import Hero from '@/components/Hero'
 import LatestPosts from '@/components/LatestPosts'
-import SubscriptionForm from '@/components/SubscriptionForm'
 import LatestProjects from '@/components/LatestProjects'
 import Fetcher from '@/lib/fetcher'
 import { IPost } from '@/interfaces/Post'
@@ -19,9 +18,6 @@ export default function Home({ featuredPost, posts, projects }: IProps) {
       <Hero />
       <LatestPosts featuredPost={featuredPost} posts={posts} />
       <LatestProjects projects={projects} />
-      <div className="mb-14 md:mb-24 lg:mb-40">
-        <SubscriptionForm />
-      </div>
     </div>
   )
 }
