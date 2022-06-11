@@ -10,3 +10,10 @@ export interface IPage {
   seo_description?: string
   og_image?: string
 }
+
+export interface IGeneratedPageProps {
+  params: {
+    id: string
+    slug: string
+  }
+}

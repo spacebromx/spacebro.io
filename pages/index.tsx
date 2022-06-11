@@ -2,9 +2,10 @@ import { GetStaticProps } from 'next'
 import Hero from '@/components/Hero'
 import LatestPosts from '@/components/LatestPosts'
 import LatestProjects from '@/components/LatestProjects'
-import Fetcher from '@/lib/fetcher'
 import { IPost } from '@/interfaces/Post'
 import { IProject } from '@/interfaces/Project'
+import ArticlesService from '@/services/ArticlesService'
+import ProjectsService from '@/services/ProjectsService'
 
 interface IProps {
   featuredPost: IPost
@@ -23,16 +24,21 @@ export default function Home({ featuredPost, posts, projects }: IProps) {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
+  const articlesService = ArticlesService.getInstance()
+  const projectsService = ProjectsService.getInstance()
   const [featuredPost, posts, projects] = await Promise.all([
-    Fetcher(
-      `${process.env.NEXT_PUBLIC_API_URL}/items/articles?filter={"status":{"_eq": "published"},"featured":{"_eq": true}}&limit=1`
-    ),
-    Fetcher(
-      `${process.env.NEXT_PUBLIC_API_URL}/items/articles?filter={"status":{"_eq": "published"},"featured":{"_eq": false}}&limit=6`
-    ),
-    Fetcher(
-      `${process.env.NEXT_PUBLIC_API_URL}/items/projects?filter={"status":{"_eq": "published"}}&limit=3&sort=sort,-date_created`
-    ),
+    articlesService.getPosts({
+      quantity: 1,
+      filter: { field: 'featured', value: true },
+    }),
+    articlesService.getPosts({
+      quantity: 6,
+      filter: { field: 'featured', value: false },
+    }),
+    projectsService.getProjects({
+      quantity: 3,
+      extra: '&sort=sort,-date_created',
+    }),
   ])
 
   return {
