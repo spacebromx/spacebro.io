@@ -35,7 +35,7 @@ const WorkIndex = ({ projects }) => {
 
 export default WorkIndex
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async () => {
   const projectsService = ProjectsService.getInstance()
   const { data: projects } = await projectsService.getProjects({
     quantity: 100,

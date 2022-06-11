@@ -3,12 +3,6 @@ import useSWR from 'swr'
 import format from 'comma-number'
 import Fetcher from '@/lib/fetcher'
 
-const mockData = new Array(5).fill({
-  title: 'This is an example title of a popular post on the sidebar',
-  slug: '/articles/hello-world',
-  views: 1222,
-})
-
 const TopArticles = () => {
   const { data } = useSWR(`/api/views/`, Fetcher)
   let posts = []

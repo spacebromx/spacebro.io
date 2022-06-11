@@ -41,7 +41,7 @@ export default function Articles({ posts }) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async () => {
   const articlesService = ArticlesService.getInstance()
   const { data: posts } = await articlesService.getPosts({
     quantity: 6,

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 interface IProps {
-  onClose: (boolean) => void
+  onClose: () => void
 }
 
 const MobileMenu = ({ onClose }: IProps) => {

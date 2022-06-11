@@ -23,7 +23,7 @@ export default function Home({ featuredPost, posts, projects }: IProps) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async () => {
   const articlesService = ArticlesService.getInstance()
   const projectsService = ProjectsService.getInstance()
   const [featuredPost, posts, projects] = await Promise.all([
