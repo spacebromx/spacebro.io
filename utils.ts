@@ -1,4 +1,5 @@
 import { SITE_URL } from '@/constants'
+import { TQueryFilter } from '@/services/types'
 
 export const truncateText = (
   text: string,
@@ -29,11 +30,6 @@ export function getOGImage(og_image: string, featured_image: string): string {
   } else {
     return `${SITE_URL}/images/og-placeholder.jpg`
   }
-}
-
-type TQueryFilter = {
-  field?: string
-  value?: string | number | boolean
 }
 
 interface IQueryBuilderParams {

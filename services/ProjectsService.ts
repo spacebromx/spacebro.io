@@ -1,7 +1,7 @@
 import Fetcher from '@/lib/fetcher'
 import { queryStringBuilder } from '@/utils'
 import { IProject } from '@/interfaces/Project'
-import { ReturnData } from '@/services/types'
+import { IQueryBuilderParams, ReturnData } from '@/services/types'
 
 class ProjectsService {
   private static instance: ProjectsService
@@ -19,11 +19,16 @@ class ProjectsService {
     return ProjectsService.instance
   }
 
-  public getProjects(quantity: number = 1): Promise<ReturnData<IProject>> {
+  public getProjects({
+    quantity = 1,
+    extra = '',
+    filter = {},
+  }: IQueryBuilderParams): Promise<ReturnData<IProject>> {
     const query = queryStringBuilder({
       endpoint: this.endpoint,
       quantity,
-      extra: '&sort=sort,-date_created',
+      extra,
+      filter,
     })
 
     return Fetcher(query)

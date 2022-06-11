@@ -4,8 +4,8 @@ import TopArticles from '@/components/TopArticles'
 import { GetStaticProps } from 'next'
 import { MAX_NORMAL_EXCERPT_CHARS } from '@/constants'
 import { truncateText } from 'utils'
-import Fetcher from '@/lib/fetcher'
 import readingTime from 'reading-time'
+import ArticlesService from '@/services/ArticlesService'
 
 export default function Articles({ posts }) {
   return (
@@ -42,9 +42,11 @@ export default function Articles({ posts }) {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const { data: posts } = await Fetcher(
-    `${process.env.NEXT_PUBLIC_API_URL}/items/articles?filter={"status":{"_eq": "published"}}&limit=6&sort=-date_created`
-  )
+  const articlesService = ArticlesService.getInstance()
+  const { data: posts } = await articlesService.getPosts({
+    quantity: 6,
+    extra: '&sort=-date_created',
+  })
 
   return {
     props: { posts },

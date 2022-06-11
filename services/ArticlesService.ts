@@ -1,7 +1,7 @@
 import Fetcher from '@/lib/fetcher'
 import { queryStringBuilder } from '@/utils'
 import { IPost } from '@/interfaces/Post'
-import { ReturnData } from '@/services/types'
+import { ReturnData, IQueryBuilderParams } from '@/services/types'
 
 class ArticlesService {
   private static instance: ArticlesService
@@ -19,28 +19,18 @@ class ArticlesService {
     return ArticlesService.instance
   }
 
-  public getFeaturedPosts(quantity: number = 1): Promise<ReturnData<IPost>> {
+  public getPosts({
+    quantity = 1,
+    extra = '',
+    filter = {},
+  }: IQueryBuilderParams): Promise<ReturnData<IPost>> {
     const query = queryStringBuilder({
       endpoint: this.endpoint,
       quantity,
-      filter: {
-        field: 'featured',
-        value: true,
-      },
+      filter,
+      extra,
     })
 
-    return Fetcher(query)
-  }
-
-  public getNonFeaturedPosts(quantity: number = 1): Promise<ReturnData<IPost>> {
-    const query = queryStringBuilder({
-      endpoint: this.endpoint,
-      quantity,
-      filter: {
-        field: 'featured',
-        value: false,
-      },
-    })
     return Fetcher(query)
   }
 }

@@ -27,9 +27,18 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const articlesService = ArticlesService.getInstance()
   const projectsService = ProjectsService.getInstance()
   const [featuredPost, posts, projects] = await Promise.all([
-    articlesService.getFeaturedPosts(),
-    articlesService.getNonFeaturedPosts(6),
-    projectsService.getProjects(3),
+    articlesService.getPosts({
+      quantity: 1,
+      filter: { field: 'featured', value: true },
+    }),
+    articlesService.getPosts({
+      quantity: 6,
+      filter: { field: 'featured', value: false },
+    }),
+    projectsService.getProjects({
+      quantity: 3,
+      extra: '&sort=sort,-date_created',
+    }),
   ])
 
   return {
