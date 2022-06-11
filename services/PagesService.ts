@@ -1,7 +1,7 @@
 import Fetcher from '@/lib/fetcher'
 import { queryStringBuilder } from '@/utils'
-import { IProject } from '@/interfaces/Project'
 import { IQueryBuilderParams, ReturnData } from '@/services/types'
+import { IPage } from '@/interfaces/Page'
 
 class PagesService {
   private static instance: PagesService
@@ -23,7 +23,7 @@ class PagesService {
     quantity = 1,
     extra = '',
     filter = {},
-  }: IQueryBuilderParams): Promise<ReturnData<IProject>> {
+  }: IQueryBuilderParams): Promise<ReturnData<IPage>> {
     const query = queryStringBuilder({
       endpoint: this.endpoint,
       quantity,

@@ -1,8 +1,7 @@
 import Single from '@/components/Layout/single'
 import { GetStaticPaths, GetStaticProps } from 'next'
-import Fetcher from '@/lib/fetcher'
 import { parseMDXContent } from '@/lib/mdx'
-import { IPage } from '@/interfaces/Page'
+import { IGeneratedPageProps, IPage } from '@/interfaces/Page'
 import PagesService from '@/services/PagesService'
 
 interface IProps {
@@ -20,12 +19,13 @@ const SingleWork = ({ page }: IProps) => {
 export default SingleWork
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { data: pages } = await Fetcher(
-    `${process.env.NEXT_PUBLIC_API_URL}/items/pages?filter={"status":{"_eq": "published"}}`
-  )
+  const pagesService = PagesService.getInstance()
+  const { data: pages } = await pagesService.getPage({
+    quantity: 100,
+  })
 
-  const paths = pages.map((page) => ({
-    params: { id: page.id, slug: page.slug },
+  const paths: Array<IGeneratedPageProps> = pages.map((page) => ({
+    params: { id: page.id.toString(), slug: page.slug },
   }))
 
   return { paths, fallback: false }

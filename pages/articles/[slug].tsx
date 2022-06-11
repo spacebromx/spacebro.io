@@ -6,6 +6,7 @@ import Fetcher from '@/lib/fetcher'
 import { IPost } from '@/interfaces/Post'
 import { parseMDXContent } from '@/lib/mdx'
 import ArticlesService from '@/services/ArticlesService'
+import { IGeneratedPageProps } from '@/interfaces/Page'
 
 interface IProps {
   post: IPost
@@ -21,12 +22,13 @@ export default function Post({ post }: IProps) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { data: posts } = await Fetcher(
-    `${process.env.NEXT_PUBLIC_API_URL}/items/articles?filter={"status":{"_eq": "published"}}`
-  )
+  const articlesService = ArticlesService.getInstance()
+  const { data: posts } = await articlesService.getPosts({
+    quantity: 1000,
+  })
 
-  const paths = posts?.map((post: IPost) => ({
-    params: { id: post.id, slug: post.slug },
+  const paths: Array<IGeneratedPageProps> = posts?.map((post: IPost) => ({
+    params: { id: post.id.toString(), slug: post.slug },
   }))
 
   return { paths: paths, fallback: false }
