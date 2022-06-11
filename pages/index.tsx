@@ -24,11 +24,11 @@ export default function Home({ featuredPost, posts, projects }: IProps) {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const postService = ArticlesService.getInstance()
+  const articlesService = ArticlesService.getInstance()
   const projectsService = ProjectsService.getInstance()
   const [featuredPost, posts, projects] = await Promise.all([
-    postService.getFeaturedPosts(),
-    postService.getNonFeaturedPosts(6),
+    articlesService.getFeaturedPosts(),
+    articlesService.getNonFeaturedPosts(6),
     projectsService.getProjects(3),
   ])
 
