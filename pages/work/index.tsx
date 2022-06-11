@@ -1,9 +1,9 @@
 import { NextSeo } from 'next-seo'
 import ProjectPreview from '@/components/ProjectPreview'
 import { GetStaticProps } from 'next'
-import Fetcher from '@/lib/fetcher'
 import { truncateText } from '@/utils'
 import { MAX_PROJECT_EXCERPT_CHARS } from '@/constants'
+import ProjectsService from '@/services/ProjectsService'
 
 const WorkIndex = ({ projects }) => {
   return (
@@ -36,13 +36,15 @@ const WorkIndex = ({ projects }) => {
 export default WorkIndex
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const projects = await Fetcher(
-    `${process.env.NEXT_PUBLIC_API_URL}/items/projects?filter={"status":{"_eq": "published"}}&sort=sort,-date_created&limit=100`
-  )
+  const projectsService = ProjectsService.getInstance()
+  const { data: projects } = await projectsService.getProjects({
+    quantity: 100,
+    extra: '&sort=sort,-date_created',
+  })
 
   return {
     props: {
-      projects: projects.data,
+      projects,
     },
     revalidate: 1,
   }

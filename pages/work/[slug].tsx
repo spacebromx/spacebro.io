@@ -4,6 +4,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import Fetcher from '@/lib/fetcher'
 import { parseMDXContent } from '@/lib/mdx'
 import { IProject } from '@/interfaces/Project'
+import ProjectsService from '@/services/ProjectsService'
 
 interface IProps {
   project: IProject
@@ -32,9 +33,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { data: rawProject } = await Fetcher(
-    `${process.env.NEXT_PUBLIC_API_URL}/items/projects?filter={"slug":{"_eq":"${params.slug}"},"status":{"_eq": "published"}}`
-  )
+  const projectsService = ProjectsService.getInstance()
+  const { data: rawProject } = await projectsService.getProjects({
+    quantity: 1,
+    filter: {
+      field: 'slug',
+      value: `"${params.slug}"`,
+    },
+  })
 
   const project = await parseMDXContent(rawProject)
 
