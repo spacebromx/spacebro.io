@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { MDXEmbedProvider } from 'mdx-embed'
