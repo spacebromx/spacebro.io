@@ -1,6 +1,7 @@
 import Fetcher from '@/lib/fetcher'
 import { queryStringBuilder } from '@/utils'
 import { IPost } from '@/interfaces/Post'
+import { ReturnData } from '@/services/types'
 
 class ArticlesService {
   private static instance: ArticlesService
@@ -18,7 +19,7 @@ class ArticlesService {
     return ArticlesService.instance
   }
 
-  public getFeaturedPosts(quantity: number = 1): Promise<IPost> {
+  public getFeaturedPosts(quantity: number = 1): Promise<ReturnData<IPost>> {
     const query = queryStringBuilder({
       endpoint: this.endpoint,
       quantity,
@@ -31,7 +32,7 @@ class ArticlesService {
     return Fetcher(query)
   }
 
-  public getNonFeaturedPosts(quantity: number = 1): Promise<IPost> {
+  public getNonFeaturedPosts(quantity: number = 1): Promise<ReturnData<IPost>> {
     const query = queryStringBuilder({
       endpoint: this.endpoint,
       quantity,
