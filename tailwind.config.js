@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const { fontFamily } = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: ['./app/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -47,7 +50,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sf: ['SF Pro Display', 'Arial', 'sans-serif'],
+        sans: ['var(--font-sf)', ...fontFamily.sans],
       },
     },
     variants: {

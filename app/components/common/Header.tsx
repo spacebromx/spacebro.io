@@ -57,9 +57,9 @@ const Header = () => {
                 href={link.href}
                 key={link.href}
                 className={clsx(
-                  ' bg-clip-text hover:text-transparent bg-gradient-to-r from-orange-900 to-yellow-900 font-bold text-white transition-all',
-                  pathname?.startsWith(link.href) &&
-                    'text-transparent bg-gradient-to-r from-orange-900 to-yellow-900'
+                  ' bg-clip-text hover:text-transparent bg-gradient-to-r from-orange-900 to-yellow-900 font-bold text-white transition-all text-xl',
+                  !!pathname?.startsWith(link.href) &&
+                    'bg-green-500 text-transparent bg-gradient-to-r from-orange-900 to-yellow-900'
                 )}
                 title={`Go to ${link.label}`}
               >

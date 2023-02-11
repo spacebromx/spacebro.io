@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <>
       <div className="bg-gradient-to-r from-teal-900 to-pink-900 h-0.5 mb-14 lg:mb-20" />
-      <div className="footer grid grid-cols-4 gap-y-8 md:gap-y-0 md:gap-x-8 lg:gap-y-0 px-4 md:px-8 lg:px-0 md:grid-cols-6 lg:grid-cols-12 mb-20 text-white">
+      <div className="footer container mx-auto grid grid-cols-4 gap-y-8 md:gap-y-0 md:gap-x-8 lg:gap-y-0 px-4 md:px-8 lg:px-0 md:grid-cols-6 lg:grid-cols-12 mb-20 text-white">
         <div className="col-span-4 md:col-span-2 lg:col-span-4">
           <div className="text-center flex items-center">
             <svg

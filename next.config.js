@@ -5,6 +5,9 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+  images: {
+    domains: ['localhost', 'spacebro.info'],
+  },
 }
 
 module.exports = nextConfig
