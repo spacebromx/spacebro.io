@@ -30,6 +30,7 @@ const ArticleDetail = ({ children, post, urlPrefix }: IProps) => {
   return (
     <>
       <NextSeo
+        useAppDir
         title={title}
         description={
           seo_description

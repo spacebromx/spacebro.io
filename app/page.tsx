@@ -22,14 +22,16 @@ const HomePage = async () => {
   })
 
   return (
-    <div className="container mx-auto">
-      <Hero />
-      <LatestPosts
-        featuredPost={featuredPost as Array<IPost>}
-        posts={posts as Array<IPost>}
-      />
-      <LatestProjects projects={projects as Array<IPost>} />
-    </div>
+    <>
+      <div className="container mx-auto">
+        <Hero />
+        <LatestPosts
+          featuredPost={featuredPost as Array<IPost>}
+          posts={posts as Array<IPost>}
+        />
+        <LatestProjects projects={projects as Array<IPost>} />
+      </div>
+    </>
   )
 }
 

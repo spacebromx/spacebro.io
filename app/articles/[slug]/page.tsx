@@ -20,12 +20,14 @@ const PostDetail = async ({ params }: IProps) => {
   const post = await parseMDXContent(rawPost)
 
   return (
-    <div className="container mx-auto">
-      <ArticleDetail post={post[0]} urlPrefix="articles">
-        <TwitterCTA />
-        <AuthorBox />
-      </ArticleDetail>
-    </div>
+    <>
+      <div className="container mx-auto">
+        <ArticleDetail post={post[0]} urlPrefix="articles">
+          <TwitterCTA />
+          <AuthorBox />
+        </ArticleDetail>
+      </div>
+    </>
   )
 }
 

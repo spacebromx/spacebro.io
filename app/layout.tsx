@@ -3,6 +3,8 @@ import { ReactNode } from 'react'
 import Header from '@components/common/Header'
 import Footer from '@components/common/Footer'
 import localFont from '@next/font/local'
+import { NextSeo } from 'next-seo'
+import SEO from '@/next-seo.config'
 
 const SFFont = localFont({
   src: [
@@ -38,7 +40,9 @@ export default function RootLayout({
   return (
     <html>
       <head>
-        <title>Spacebro</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <NextSeo useAppDir {...SEO} />
       </head>
       <body>
         <div className="hidden lg:block bg-gradient-to-r from-teal-900 to-pink-900 h-0.5" />
