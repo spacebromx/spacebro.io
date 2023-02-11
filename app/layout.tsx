@@ -46,9 +46,11 @@ export default function RootLayout({
       </head>
       <body>
         <div className="hidden lg:block bg-gradient-to-r from-teal-900 to-pink-900 h-0.5" />
-        <div className="container mx-auto bg-purple-800 sticky top-0 opacity-90 bg-purple-800 flex flex-col h-16 items-center flex-row backdrop-blur-xl md:backdrop-filter-none z-10">
+        <div className="bg-purple-800 sticky top-0 opacity-90 bg-purple-800 flex flex-col h-16 items-center flex-row backdrop-blur-xl md:backdrop-filter-none z-20">
           <div className="w-full relative h-full flex items-center">
-            <Header />
+            <div className="container mx-auto">
+              <Header />
+            </div>
             <div className="lg:hidden bg-gradient-to-r from-teal-900 to-pink-900 h-0.5 w-full absolute bottom-0" />
           </div>
         </div>
