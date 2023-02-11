@@ -17,7 +17,7 @@ const ArticlesPage = async () => {
 
   return (
     <>
-      <NextSeo useAppDir {...SEO} title={'All My Articles'} />
+      <NextSeo useAppDir {...SEO} title="All My Articles" />
       <div className="container mx-auto">
         <div className="posts-listing grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-24 md:gap-12 lg:gap-24 mx-4 md:mx-8 lg:mx-0 mt-14 mb-16 lg:my-20">
           <div className="col-span-1 md:col-span-4 lg:col-span-8">
