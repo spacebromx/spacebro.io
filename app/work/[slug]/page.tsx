@@ -3,6 +3,7 @@ import { parseMDXContent } from '@lib/mdx'
 import directus from '@lib/directus'
 import TwitterCTA from '@components/Content/TwitterCTA'
 import ArticleDetail from '@components/Content/ArticleDetail'
+import { notFound } from 'next/navigation'
 
 type TParams = { slug: string }
 
@@ -18,6 +19,8 @@ const ProjectDetail = async ({ params }: IProps) => {
     limit: 1,
   })
   const project = await parseMDXContent(rawProject)
+
+  if (!project?.length) return notFound()
 
   return (
     <div className="container mx-auto">

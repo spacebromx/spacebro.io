@@ -19,6 +19,8 @@ export default async function Head({ params }: IProps) {
     limit: 1,
   })
 
+  if (!post!.length) return null
+
   const { title, seo_description, excerpt } = (post as Array<IPost>)[0]
 
   const updateMeta: NextSeoProps = {

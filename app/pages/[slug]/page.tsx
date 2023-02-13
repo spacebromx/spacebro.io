@@ -3,6 +3,7 @@ import directus from '@lib/directus'
 import ArticleDetail from '@components/Content/ArticleDetail'
 import TwitterCTA from '@components/Content/TwitterCTA'
 import AuthorBox from '@components/Content/AuthorBox'
+import { notFound } from 'next/navigation'
 
 type TParams = { slug: string }
 
@@ -18,6 +19,8 @@ const SingleWork = async ({ params }: IProps) => {
     limit: 1,
   })
   const page = await parseMDXContent(rawPage)
+
+  if (!page?.length) return notFound()
 
   return (
     <div className="container mx-auto">

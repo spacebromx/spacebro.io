@@ -8,6 +8,7 @@ import { NEXT_SEO_DEFAULT } from '@/next-seo.config'
 import { getOGImage, truncateText } from '@/utils'
 import { SEO_SNIPPET_LENGTH } from '@/constants'
 import { IPost } from '@/types/Content'
+import { notFound } from 'next/navigation'
 
 type TParams = { slug: string }
 
@@ -22,6 +23,9 @@ const PostDetail = async ({ params }: IProps) => {
     filter: { slug: { _eq: slug } },
     limit: 1,
   })
+
+  if (!rawPost?.length) return notFound()
+
   const post: Array<IPost> = await parseMDXContent(rawPost)
 
   const {
