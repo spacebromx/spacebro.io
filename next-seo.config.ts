@@ -1,14 +1,12 @@
-export default {
-  title: 'Alan Medina aka spacebro | Software Engineer',
-  description:
-    "I'm a Software Engineer who enjoys technology, music, video games and coding. I write useful articles and share great resources for web developers.",
+import type { NextSeoProps } from 'next-seo';
+
+export const NEXT_SEO_DEFAULT: NextSeoProps = {
   titleTemplate: '%s | Alan Medina',
-  defaultTitle: 'Alan Medina',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://spacebro.io',
-    site_name: 'Alan Medina aka spacebro',
+    siteName: 'Alan Medina aka spacebro',
   },
   twitter: {
     handle: '@spacebromx',

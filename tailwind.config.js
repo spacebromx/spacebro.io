@@ -1,6 +1,9 @@
+/** @type {import('tailwindcss').Config} */
+
+const { fontFamily } = require('tailwindcss/defaultTheme')
+
 module.exports = {
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  content: ['./app/**/*.{js,ts,jsx,tsx}'],
   theme: {
     colors: {
       teal: {
@@ -47,12 +50,10 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sf: ['SF Pro Display', 'Arial', 'sans-serif'],
+        sans: ['var(--font-sf)', ...fontFamily.sans],
       },
     },
-  },
-  variants: {
-    extend: {
+    variants: {
       opacity: ['disabled'],
       cursor: ['disabled'],
       backgroundColor: ['disabled'],

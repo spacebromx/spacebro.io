@@ -1,0 +1,69 @@
+{
+  "$schema": "./node_modules/rome/configuration_schema.json",
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "a11y": {
+        "useAltText": "error",
+        "noAutofocus": "off"
+      },
+      "complexity": {
+        "noExtraBooleanCast": "warn",
+        "noUselessFragments": "error",
+        "useSimplifiedLogicExpression": "warn"
+      },
+      "correctness": {
+        "noConstAssign": "warn",
+        "noUndeclaredVariables": "error",
+        "noUnreachable": "error",
+        "noUnusedVariables": "warn",
+        "noVoidElementsWithChildren": "error"
+      },
+      "performance": {
+        "noDelete": "error"
+      },
+      "recommended": true,
+      "suspicious": {
+        "noExplicitAny": "off",
+        "noArrayIndexKey": "warn",
+        "noCommentText": "warn",
+        "noCompareNegZero": "warn",
+        "noDebugger": "warn",
+        "noDoubleEquals": "warn",
+        "noDuplicateParameters": "warn",
+        "noFunctionAssign": "warn",
+        "noImportAssign": "warn",
+        "noShadowRestrictedNames": "off",
+        "noSparseArray": "warn",
+        "noUnsafeNegation": "warn",
+        "useValidTypeof": "warn"
+      },
+      "style": {
+        "noUnusedTemplateLiteral": "error",
+        "useSelfClosingElements": "error",
+        "useSingleVarDeclarator": "error",
+        "useTemplate": "warn"
+      }
+    }
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentSize": 2,
+    "lineWidth": 80,
+    "ignore": [
+      "node_modules",
+      ".yarn",
+      "next",
+      "dist"
+    ]
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "trailingComma": "es5",
+      "semicolons": "asNeeded"
+    }
+  }
+}
