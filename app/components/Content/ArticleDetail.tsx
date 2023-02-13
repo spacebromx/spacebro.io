@@ -31,7 +31,6 @@ const ArticleDetail = ({ children, post, urlPrefix }: IProps) => {
     <>
       <NextSeo
         useAppDir
-        title={title}
         description={
           seo_description
             ? truncateText(seo_description, SEO_SNIPPET_LENGTH, false)

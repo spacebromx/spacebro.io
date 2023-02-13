@@ -1,4 +1,3 @@
-import { NextSeo } from 'next-seo'
 import ProjectPreview from '@components/Content/ProjectPreview'
 import { truncateText } from '@/utils'
 import { MAX_PROJECT_EXCERPT_CHARS } from '@/constants'
@@ -13,7 +12,6 @@ const ProjectsPage = async () => {
 
   return (
     <div className="container mx-auto">
-      <NextSeo title="Work & Recent Projects" useAppDir />
       <div className="projects-list py-14 lg:py-20 px-0 lg:px-0">
         <div className="px-4 md:px-8">
           <h2 className="text-3xl lg:text-5xl font-bold leading-10 lg:leading-snug mb-12 lg:mb-14 bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-orange-900 to-teal-900">

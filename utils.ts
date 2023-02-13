@@ -3,7 +3,7 @@ export const truncateText = (
   len: number,
   appendEllipsis: boolean = true
 ): string => {
-  return `${text.substr(0, len)}${appendEllipsis ? '[…]' : ''}`
+  return `${text.slice(0, len)}${appendEllipsis ? '[…]' : ''}`
 }
 
 export const formatDate = (dateString: string): string => {
