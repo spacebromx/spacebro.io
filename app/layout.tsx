@@ -5,6 +5,7 @@ import Footer from '@components/common/Footer'
 import localFont from '@next/font/local'
 import { NextSeo } from 'next-seo'
 import { NEXT_SEO_DEFAULT } from '@/next-seo.config'
+import Fathom from "@components/common/Fathom";
 
 const SFFont = localFont({
   src: [
@@ -58,6 +59,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </main>
+        <Fathom />
       </body>
     </html>
   )

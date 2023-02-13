@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -9,27 +10,7 @@ const Footer = () => {
       <div className="footer container mx-auto grid grid-cols-4 gap-y-8 md:gap-y-0 md:gap-x-8 lg:gap-y-0 px-4 md:px-8 lg:px-0 md:grid-cols-6 lg:grid-cols-12 mb-20 text-white">
         <div className="col-span-4 md:col-span-2 lg:col-span-4">
           <div className="text-center flex items-center">
-            <svg
-              className="mb-8"
-              width="89"
-              height="51"
-              viewBox="0 0 89 51"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M31.9813 13.6L10.8729 32.5125L31.9813 51H18.7L1.59375 35.9833C0.53125 35.1097 0 33.9528 0 32.5125C0 31.8514 0.129861 31.2257 0.389583 30.6354C0.672917 30.0451 1.05069 29.5375 1.52292 29.1125L18.8417 13.6H31.9813Z"
-                fill="#FC2EB1"
-              />
-              <path
-                d="M64.6 0L32.5479 50.7875H22.6667L54.7542 0H64.6Z"
-                fill="#07EDF8"
-              />
-              <path
-                d="M69.7709 13.6L87.125 29.1125C87.5972 29.5375 87.9632 30.0451 88.2229 30.6354C88.5063 31.2257 88.6479 31.8514 88.6479 32.5125C88.6479 33.1972 88.5063 33.8465 88.2229 34.4604C87.9396 35.0507 87.55 35.5583 87.0542 35.9833L69.9125 51H56.6667L77.775 32.5125L56.6667 13.6H69.7709Z"
-                fill="#FC2EB1"
-              />
-            </svg>
+            <Image src="/images/logo.svg" alt="spacebro - alan medina" width={190} height={45} className="mb-9" />
           </div>
           <div className="text-gray-600 font-normal space-y-2 md:text-sm">
             <p>
