@@ -23,6 +23,7 @@ const HomePage = async () => {
 
   return (
     <>
+      <h1 className="hidden">spacebro - Alan Medina</h1>
       <div className="container mx-auto">
         <Hero />
         <LatestPosts
